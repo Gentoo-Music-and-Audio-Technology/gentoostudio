@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="project">
+	<email>webmaster@gentoostudio.org</email>
+	<name>Gentoo Studio</name>
+  </maintainer>
+  <longdescription>
+	EQ10Q is an audio plugin bundle over the LV2 standard (http://lv2plug.in) implementing a powerful and flexible parametric equalizer and more.
+  </longdescription>
+</pkgmetadata>
