@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="project">
+	<email>webmaster@gentoostudio.org</email>
+	<name>Gentoo Studio</name>
+  </maintainer>
+  <longdescription>
+	Collection of DPF-based plugins: glBars, Kars, Max-Gen examples, Mini-Series, ndc-Plugs, MVerb, Nekobi, and ProM.
+  </longdescription>
+</pkgmetadata>
