@@ -35,3 +35,4 @@
  
  config_flags: Makefile das_config.h
  	cat das_config.h |grep COMPILEFLAGS|sed s/\\/\\/COMPILEFLAGS//|tr '\n' ' ' >config_flags
+
