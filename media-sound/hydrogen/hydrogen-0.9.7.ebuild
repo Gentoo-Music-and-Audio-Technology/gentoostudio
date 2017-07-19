@@ -68,9 +68,6 @@ src_configure()
 	-DWANT_SHARED="$(usex static)"
 	)
 	cmake-utils_src_configure
-}
 
-src_install()
-{
-	default
+	pkg-config --cflags raptor2 -I/usr/include/raptor2
 }
