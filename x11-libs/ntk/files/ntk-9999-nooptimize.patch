@@ -1,0 +1,32 @@
+# Author: Karl Linden (lilrc) <lilrc@users.sourceforge.net>
+# Purpose: Add an option to disable optimization CFLAGS from the build
+#          system.
+# The patch has not been sent upstream.
+
+diff --git a/wscript b/wscript
+index 4d3595f..a1fdd89 100644
+--- a/wscript
++++ b/wscript
+@@ -73,6 +73,8 @@ def options(opt):
+                    help='Build test programs')
+     opt.add_option('--no-ldconfig', action='store_true', default=False, dest='NO_LDCONFIG',
+                    help='Do not run ldconfig after install')
++    opt.add_option('--no-optimize', action='store_true', default=False, dest='NO_OPTIMIZE',
++                   help='Do not add optimizaition CFLAGS')
+ 
+ def configure(conf):
+     conf.load('compiler_c')
+@@ -167,9 +169,10 @@ def configure(conf):
+         conf.env.append_value('CFLAGS', debug_flags )
+         conf.env.append_value('CXXFLAGS', debug_flags )
+     else:
+-        print('Building for performance')
+-        conf.env.append_value('CFLAGS', optimization_flags )
+-        conf.env.append_value('CXXFLAGS', optimization_flags )
++        if not Options.options.NO_OPTIMIZE:
++            print('Building for performance')
++            conf.env.append_value('CFLAGS', optimization_flags )
++            conf.env.append_value('CXXFLAGS', optimization_flags )
+         conf.define( 'NDEBUG', 1 )
+ 
+     conf.env.append_value('CFLAGS', CFLAGS )

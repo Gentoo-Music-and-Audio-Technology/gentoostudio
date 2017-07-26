@@ -1,0 +1,42 @@
+# Author: Karl Linden (lilrc) <lilrc@users.sourceforge.net>
+# Purpose: Add an option to disable running ldconfig in the end of the
+#          build to the build system.
+# The patch has been sent upstream to the non mailing list. See [1] for
+# more information.
+#
+# [1] http://listengine.tuxfamily.org/lists.tuxfamily.org/non/2013/06/msg00010.html
+
+
+diff --git a/wscript b/wscript
+index 0b25ec5..914efbb 100644
+--- a/wscript
++++ b/wscript
+@@ -72,6 +72,8 @@ def options(opt):
+                    help='Build with OpenGL extension library')
+     opt.add_option('--enable-test', action='store_true', default=False, dest='ENABLE_TEST',
+                    help='Build test programs')
++    opt.add_option('--no-ldconfig', action='store_true', default=False, dest='NO_LDCONFIG',
++                   help='Do not run ldconfig after install')
+ 
+ def configure(conf):
+     conf.load('compiler_c')
+@@ -117,6 +119,9 @@ def configure(conf):
+     if Options.options.ENABLE_TEST:
+         conf.env.ENABLE_TEST = True
+ 
++    if Options.options.NO_LDCONFIG:
++        conf.env.NO_LDCONFIG = True
++
+     conf.env.BUNDLED = []    
+ 
+     conf.env['LIB_PTHREAD'] = ['pthread']
+@@ -513,7 +518,8 @@ src/Fl_Gl_Window.cxx
+     bld.install_files( bld.env.INCLUDEDIR + '/ntk/FL', start_dir.ant_glob('*.H *.h'),
+                        cwd=start_dir, relative_trick=True)
+ 
+-    bld.add_post_fun( run_ldconfig )
++    if not bld.env.NO_LDCONFIG:
++        bld.add_post_fun( run_ldconfig )
+ 
+     #  bld.install_files( string.join( [ '${DATADIR}/doc', APPNAME ], '/' ), bld.path.ant_glob( 'doc/*.html doc/*.png' ) )
+     

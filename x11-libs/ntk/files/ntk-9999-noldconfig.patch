@@ -1,0 +1,30 @@
+--- fltk.orig/wscript	2013-03-11 10:28:31.359946766 +0100
++++ fltk/wscript	2013-03-11 10:29:28.421944884 +0100
+@@ -48,19 +48,6 @@
+     kw['name'] = kw['target'] + '_shared'
+     bld.stlib(*k,**kw)
+ 
+-# from autowaf
+-def run_ldconfig(ctx):
+-    if (ctx.cmd == 'install'
+-        and not ctx.env['RAN_LDCONFIG']
+-        and ctx.env['LIBDIR']
+-        and not os.environ.get('DESTDIR')):
+-        try:
+-            Logs.info("Waf: Running `/sbin/ldconfig %s'" % ctx.env['LIBDIR'])
+-            subprocess.call(['/sbin/ldconfig', ctx.env['LIBDIR']])
+-            ctx.env['RAN_LDCONFIG'] = True
+-        except:
+-            pass
+-    
+ def options(opt):
+     opt.load('compiler_c')
+     opt.load('compiler_cxx')
+@@ -510,7 +497,5 @@
+     bld.install_files( bld.env.INCLUDEDIR + '/ntk/FL', start_dir.ant_glob('*.H *.h'),
+                        cwd=start_dir, relative_trick=True)
+ 
+-    bld.add_post_fun( run_ldconfig )
+-
+     #  bld.install_files( string.join( [ '${DATADIR}/doc', APPNAME ], '/' ), bld.path.ant_glob( 'doc/*.html doc/*.png' ) )
+     
