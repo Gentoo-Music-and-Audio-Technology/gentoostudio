@@ -11,7 +11,7 @@ SRC_URI="https://sourceforge.net/projects/eq10q/files/eq10q_2.2_installer.run"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 S="${WORKDIR}"
 
