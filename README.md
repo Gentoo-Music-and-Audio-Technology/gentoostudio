@@ -14,6 +14,9 @@ sync-type = git
 sync-uri = https://github.com/audiodef/gentoostudio.git
 auto-sync = yes
 
+Next time you emerge --sync or eix-sync, this repo will be 
+picked-up/updated.
+
 Note that I am working with the new audio-overlay team and that the 
 audio-overlay overlay could eventually replace this one as the official 
 overlay for Gentoo Studio.
