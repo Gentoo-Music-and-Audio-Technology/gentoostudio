@@ -1,8 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
+# This ebuild works as-is.
+# Upgrading to EAPI 6 requires the patch header to be -p1.
+# I don't know how to do that yet.
 
-EAPI=6
-inherit toolchain-funcs multilib
+EAPI=5
+inherit base toolchain-funcs multilib
 
 DESCRIPTION="C++ library for real-time resampling of audio signals"
 HOMEPAGE="http://kokkinizita.linuxaudio.org/linuxaudio/"
@@ -10,7 +14,8 @@ SRC_URI="http://kokkinizita.linuxaudio.org/linuxaudio/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64 ~ppc x86"
+IUSE=""
 
 DEPEND="media-libs/libsndfile"
 RDEPEND="${DEPEND}"
@@ -19,6 +24,8 @@ RESTRICT="mirror"
 
 DOCS=(AUTHORS README)
 HTML_DOCS=(docs/)
+
+PATCHES=("${FILESDIR}"/${P}-Makefile.patch)
 
 src_compile() {
 	tc-export CXX
