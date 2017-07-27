@@ -20,8 +20,6 @@ RESTRICT="mirror"
 DOCS=(AUTHORS README)
 HTML_DOCS=(docs/)
 
-PATCHES=("${FILESDIR}"/${P}-Makefile.patch)
-
 src_compile() {
 	tc-export CXX
 	emake -C libs
