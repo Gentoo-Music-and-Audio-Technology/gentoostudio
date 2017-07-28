@@ -1,11 +1,12 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# TODO: Bump to EAPI 6
 
-EAPI=6
+EAPI=5
 
 PYTHON_COMPAT=( python{2_7,3_2,3_3} )
 PYTHON_REQ_USE="threads(+)"
-inherit python-any-r1 waf-utils
+inherit git-2 python-any-r1 waf-utils
 
 DESCRIPTION="Fast Light ToolKit fork, adding improved graphics rendering via Cairo"
 HOMEPAGE="http://non.tuxfamily.org/wiki/NTK"
