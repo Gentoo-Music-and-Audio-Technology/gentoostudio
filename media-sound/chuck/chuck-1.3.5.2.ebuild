@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,11 +21,6 @@ RDEPEND="app-eselect/eselect-chuck
 DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"
-
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.2.1.1-hid-smc.patch
-	"${FILESDIR}"/${PN}-1.3.5.1-makefile.patch
-)
 
 compile_backend() {
 	backend=$1
