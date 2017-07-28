@@ -12,15 +12,16 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="media-libs/lv2
-        x11-libs/libX11
-        media-libs/libsndfile
-        media-libs/zita-resampler
-        dev-libs/expat
-        media-libs/libsmf"
-RDEPEND="${DEPEND}"
+RDEPEND="virtual/jack
+	media-libs/lv2
+	x11-libs/libX11
+	media-libs/libsndfile
+	media-libs/zita-resampler
+	dev-libs/expat
+	media-libs/libsmf"
+DEPEND="${RDEPEND}"
 
 src_configure()
 {
-        econf --enable-lv2
+	econf --enable-lv2
 }
