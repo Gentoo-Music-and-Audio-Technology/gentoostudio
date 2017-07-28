@@ -28,6 +28,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i -e 's/g++/$(CXX)/g' -e 's/-O2//g' source/Makefile
+	default
 }
 
 src_compile() {
