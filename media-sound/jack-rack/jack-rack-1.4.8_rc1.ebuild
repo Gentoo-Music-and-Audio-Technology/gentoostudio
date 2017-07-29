@@ -52,6 +52,7 @@ src_prepare() {
 
 	eautopoint
 	eautoreconf
+	default
 }
 
 src_configure() {
