@@ -1,10 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
+# Ebuilds works as-is. Bump to EAPI 6 in testing.
 
-EAPI=6
+EAPI="5"
 
 PYTHON_COMPAT=( python2_7 )
-inherit python-single-r1
+inherit autotools-utils python-single-r1
 
 RESTRICT="mirror"
 DESCRIPTION="Internet DJ Console is a streaming client"
@@ -19,7 +21,7 @@ IUSE="doc ffmpeg flac mad mpg123 mysql nls opus speex twolame"
 RDEPEND="dev-python/eyeD3[${PYTHON_USEDEP}]
 	dev-python/pygtk[${PYTHON_USEDEP}]
 	media-libs/libsamplerate
-	>=media-libs/libshout-idjc-2.4.1[speex?]
+	>=media-libs/libshout-idjc-2.3.1[speex?]
 	media-libs/libsndfile
 	media-libs/libvorbis
 	media-libs/mutagen[${PYTHON_USEDEP}]
