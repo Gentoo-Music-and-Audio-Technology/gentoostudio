@@ -1,5 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# Updated to depend on wine-any instead of wine
 
 EAPI=6
 
@@ -16,11 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND=">=media-libs/dssi-0.9.0
-        media-libs/ladspa-sdk
-        >=media-libs/liblo-0.12
-        media-libs/alsa-lib
-        virtual/jack
-        >=app-emulation/wine-0.9.5"
+	media-libs/ladspa-sdk
+	>=media-libs/liblo-0.12
+	media-libs/alsa-lib
+	virtual/jack
+	app-emulation/wine-any"
 DEPEND="${RDEPEND}"
 
 src_compile(){
