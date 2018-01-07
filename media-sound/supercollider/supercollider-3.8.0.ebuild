@@ -80,6 +80,9 @@ src_configure() {
 src_install() {
 	cmake-utils_src_install
 
+#	Do not violate multilib strict
+	mv "${ED}/usr/lib" "${ED}/usr/$(get_libdir)" || die "mv failed"
+
 	use vim && newdoc editors/scvim/README.md README.vim
 	use emacs && newdoc editors/scel/README.md README.emacs
 	use gedit && newdoc editors/sced/README.md README.gedit
