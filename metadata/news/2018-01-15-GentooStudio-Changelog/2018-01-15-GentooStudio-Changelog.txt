@@ -1,0 +1,16 @@
+Title: Changelog for Gentoo Studio, Jan 2018
+Author: Damien Moody <webmaster@gentoostudio.org>
+Content-Type: text/plain
+Posted: 2018-01-15
+Revision: 1
+News-Item-Format: 1.0
+Display-If-Installed:
+
+A lot has changed this month. Please see https://gentoostudio.org
+Existing users are encouraged to unmerge media-sound/cadence and
+emerge media-sound/cadence-bin. This will remove media-sound/ladish
+as a dependency. Ladish has not been updated in a while and Cadence
+is the only package depending on it. The binary package will be more
+reliable going foward.
+
+
