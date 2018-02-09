@@ -17,7 +17,7 @@ IUSE="alsa oss static-libs"
 # jack: fails to build if disabled
 # pulseaudio: not fully supported
 
-RDEPEND=">=virtual/jack
+RDEPEND="virtual/jack
 	alsa? ( >=media-libs/alsa-lib-1.0.0 )
 	x11-libs/libX11"
 # osc? ( >=media-libs/liblo-0.22 )
