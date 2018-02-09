@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 DOCS=( AUTHORS ChangeLog HOWTO NEWS README )
 
 src_prepare() {
+	default
 	epatch "${FILESDIR}"/${P}-cflags.patch
 	epatch "${FILESDIR}"/${P}-implicit-dec.patch
 	eautoreconf
