@@ -46,5 +46,27 @@ src_configure() {
 src_install() {
 	default
 	prune_libtool_files
-	make_desktop_entry "startBristol -explorer -jack" "Bristol: Explorer"
+	make_desktop_entry "startBristol -explorer -jack" "Bristol: explorer"
+	make_desktop_entry "startBristol -mini -jack" "Bristol: mini"
+	make_desktop_entry "startBristol -memory -jack" "Bristol: memory"
+	make_desktop_entry "startBristol -hammond -jack" "Bristol: hammond"
+	make_desktop_entry "startBristol -b3 -jack" "Bristol: b3"
+	make_desktop_entry "startBristol -dx -jack" "Bristol: dx"
+	make_desktop_entry "startBristol -axxe -jack" "Bristol: axxe"
+	make_desktop_entry "startBristol -odyssey -jack" "Bristol: odyssey"
+	make_desktop_entry "startBristol -2600 -jack" "Bristol: 2600"
+	make_desktop_entry "startBristol -mono -jack" "Bristol: mono"
+	make_desktop_entry "startBristol -poly -jack" "Bristol: poly"
+	make_desktop_entry "startBristol -juno -jack" "Bristol: juno"
+	make_desktop_entry "startBristol -prophet -jack" "Bristol: prophet"
+	make_desktop_entry "startBristol -pro10 -jack" "Bristol: pro10"
+	make_desktop_entry "startBristol -pro52 -jack" "Bristol: pro52"
+	make_desktop_entry "startBristol -mixer -jack" "Bristol: mixer"
+	make_desktop_entry "startBristol -vox -jack" "Bristol: vox"
+	make_desktop_entry "startBristol -rhodes -jack" "Bristol: rhodes"
+	make_desktop_entry "startBristol -rhodesbass -jack" "Bristol: rhodesbass"
+	make_desktop_entry "startBristol -obx -jack" "Bristol: obx"
+	make_desktop_entry "startBristol -obxa -jack" "Bristol: obxa"
+	make_desktop_entry "startBristol -aks -jack" "Bristol: aks"
+	#Todo: put them all in their own Bristol submenu and change to friendlier menu entry names.
 }
