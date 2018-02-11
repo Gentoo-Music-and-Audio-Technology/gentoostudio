@@ -46,5 +46,5 @@ src_configure() {
 src_install() {
 	default
 	prune_libtool_files
-	make_desktop_entry "bristol -explorer -jack" "Bristol: Explorer" AudioVideo
+	make_desktop_entry "startBristol -explorer -jack" "Bristol: Explorer"
 }
