@@ -15,4 +15,12 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="virtual/jack"
-DEPEND="${RDEPEND}"
+iDEPEND="${RDEPEND}"
+
+src_compile() {
+	emake
+}
+
+src_install() {
+	emake PREFIX="/usr" DESTDIR="${D}" install
+}
