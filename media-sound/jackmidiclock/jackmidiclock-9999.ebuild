@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit git-r3
+
 DESCRIPTION=""
 HOMEPAGE=""
 EGIT_REPO_URI="https://github.com/x42/jack_midi_clock.git"
@@ -12,5 +14,5 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="virtual/jack"
+DEPEND="${RDEPEND}"
