@@ -15,3 +15,14 @@ IUSE=""
 
 RDEPEND="virtual/jack"
 DEPEND="${RDEPEND}"
+
+src_compile() {
+	myemakeargs=(PREFIX="/usr"
+		SKIP_STRIPPING=true
+	)
+	emake "${myemakeargs[@]}"
+}
+
+src_install() {
+	emake PREFIX="/usr" DESTDIR="${D}" install
+}
