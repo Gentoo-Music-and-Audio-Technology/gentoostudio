@@ -7,7 +7,8 @@ inherit eutils
 DESCRIPTION="Libshout-idjc is libshout plus some extensions for IDJC"
 HOMEPAGE="http://sourceforge.net/projects/idjc/files/libshout-idjc/"
 RESTRICT="mirror"
-SRC_URI="mirror://sourceforge/idjc/${P}.tar.gz"
+#SRC_URI="mirror://sourceforge/idjc/${P}.tar.gz"
+SRC_URI="https://sourceforge.net/projects/libshoutidjc.idjc.p/files/${P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
