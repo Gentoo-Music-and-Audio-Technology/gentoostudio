@@ -23,8 +23,8 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
 	lv2? ( media-libs/lv2 )"
 PATCHES=(
-	"${FILESDIR}/${P}-nptl-hardened.patch"
-	"${FILESDIR}/${P}-lv2-automagic.patch"
+	#"${FILESDIR}/${P}-nptl-hardened.patch"
+	#"${FILESDIR}/${P}-lv2-automagic.patch"
 )
 
 src_prepare() {
