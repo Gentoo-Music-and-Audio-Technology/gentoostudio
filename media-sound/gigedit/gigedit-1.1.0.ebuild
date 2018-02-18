@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-cpp/gtkmm:2.4
+RDEPEND="dev-cpp/gtkmm:3.0
 	>=media-libs/libgig-3.3.0
 	>=media-libs/libsndfile-1.0.2
 	>=media-sound/linuxsampler-2.1.0"
