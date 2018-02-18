@@ -15,17 +15,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc jack lv2 sqlite static-libs"
 
 RDEPEND="sqlite? ( >=dev-db/sqlite-3.3 )
-	>=media-libs/libgig-4.0.0
+	>=media-libs/libgig-4.1.0
 	media-libs/alsa-lib
 	jack? ( virtual/jack )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	doc? ( app-doc/doxygen )
 	lv2? ( media-libs/lv2 )"
-PATCHES=(
-	#"${FILESDIR}/${P}-nptl-hardened.patch"
-	#"${FILESDIR}/${P}-lv2-automagic.patch"
-)
 
 src_prepare() {
 	default
