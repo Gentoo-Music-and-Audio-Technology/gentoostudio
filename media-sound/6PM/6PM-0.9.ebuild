@@ -18,5 +18,5 @@ RDEPEND="virtual/jack"
 DEPEND="${RDEPEND}"
 
 src_install(){
-	dobin install.sh
+	doexe install.sh
 }
