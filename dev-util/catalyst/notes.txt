@@ -1,1 +1,0 @@
-Commented out catalyst/base/stagebase.py, line 1236, self.write_make_conf - overwrites custom make.conf from fsscript.
