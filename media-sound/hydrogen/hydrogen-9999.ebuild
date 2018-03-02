@@ -1,72 +1,81 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-case "${PV}" in
-	(*9999*)
-	KEYWORDS=""
-	VCS_ECLASS=git-r3
-	EGIT_REPO_URI="git://github.com/hydrogen-music/${PN}.git"
-	;;
-	(*)
-	KEYWORDS="~amd64"
-	VCS_ECLASS=vcs-snapshot
-	SRC_URI="https://github.com/${PN}-music/${PN}/archive/${PVR/_/-}.tar.gz -> ${P}.tar.gz"
-	;;
-esac
-inherit eutils cmake-utils multilib flag-o-matic toolchain-funcs ${VCS_ECLASS}
+inherit cmake-utils git-r3 xdg-utils
 
 DESCRIPTION="Advanced drum machine"
-HOMEPAGE="http://www.hydrogen-music.org"
+HOMEPAGE="http://www.hydrogen-music.org/"
+EGIT_REPO_URI="https://github.com/${PN}-music/${PN}"
 
 LICENSE="GPL-2 ZLIB"
 SLOT="0"
-IUSE="+alsa +archive debug doc +extra +jack jack-session ladspa lash oss portaudio portmidi -pulseaudio rubberband static"
+KEYWORDS=""
+IUSE="alsa +archive jack ladspa lash osc oss portaudio portmidi pulseaudio"
+
 REQUIRED_USE="lash? ( alsa )"
 
-# liblo>=0.28 required in order to provide lo_cpp.h to hydrogen-9999
-RDEPEND="archive? ( app-arch/libarchive )
-	!archive? ( >=dev-libs/libtar-1.2.11-r3 )
-	dev-qt/qtgui:4 dev-qt/qtcore:4
-	dev-qt/qtxmlpatterns:4
+RDEPEND="
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtnetwork:5
+	dev-qt/qtwidgets:5
+	dev-qt/qtxml:5
+	dev-qt/qtxmlpatterns:5
 	>=media-libs/libsndfile-1.0.18
 	alsa? ( media-libs/alsa-lib )
+	archive? ( app-arch/libarchive )
+	!archive? ( >=dev-libs/libtar-1.2.11-r3 )
 	jack? ( virtual/jack )
 	ladspa? ( media-libs/liblrdf )
 	lash? ( media-sound/lash )
-	portaudio? ( >=media-libs/portaudio-19_pre )
+	osc? ( media-libs/liblo )
+	portaudio? ( media-libs/portaudio )
 	portmidi? ( media-libs/portmidi )
 	pulseaudio? ( media-sound/pulseaudio )
-	rubberband? ( media-libs/rubberband )
-	extra? ( media-libs/hydrogen-drumkits )
-	>=media-libs/liblo-0.28"
+"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
-	media-libs/raptor
-	doc? ( app-doc/doxygen )"
+"
 
 DOCS=( AUTHORS ChangeLog DEVELOPERS README.txt )
 
-S="${WORKDIR}/${PN}-${PVR/_rc/-RC}"
+PATCHES=( "${FILESDIR}/${PN}-gnuinstalldirs.patch" )
 
-src_configure()
-{
-	sed -e 's/-O2 //g' -i CMakeLists.txt
+src_configure() {
 	local mycmakeargs=(
-	-DWANT_ALSA="$(usex alsa)"
-	-DWANT_LIBARCHIVE="$(usex archive)"
-	-DWANT_DEBUG="$(usex debug)"
-	-DWANT_JACK="$(usex jack)"
-	-DWANT_JACKSESSION="$(usex jack-session)"
-	-DWANT_LRDF="$(usex ladspa)"
-	-DWANT_LASH="$(usex lash)"
-	-DWANT_OSS="$(usex oss)"
-	-DWANT_PORTAUDIO="$(usex portaudio)"
-	-DWANT_PORTMIDI="$(usex portmidi)"
-	-DWANT_PULSEAUDIO="$(usex pulseaudio)"
-	-DWANT_RUBBERBAND="$(usex rubberband)"
-	-DWANT_SHARED="$(usex static)"
+		-DWANT_ALSA=$(usex alsa)
+		-DWANT_CPPUNIT=OFF
+		-DWANT_DEBUG=OFF
+		-DWANT_JACK=$(usex jack)
+		-DWANT_JACKSESSION=$(usex jack)
+		-DWANT_LADSPA=$(usex ladspa)
+		-DWANT_LASH=$(usex lash)
+		-DWANT_LIBARCHIVE=$(usex archive)
+		-DWANT_LRDF=$(usex ladspa)
+		-DWANT_OSC=$(usex osc)
+		-DWANT_OSS=$(usex oss)
+		-DWANT_PORTAUDIO=$(usex portaudio)
+		-DWANT_PORTMIDI=$(usex portmidi)
+		-DWANT_PULSEAUDIO=$(usex pulseaudio)
+		-DWANT_RUBBERBAND=OFF
 	)
+
 	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+	dosym ../../${PN}/data/doc /usr/share/doc/${PF}/html
+}
+
+pkg_postinst() {
+	xdg_mimeinfo_database_update
+	xdg_desktop_database_update
+}
+
+pkg_postrm() {
+	xdg_mimeinfo_database_update
+	xdg_desktop_database_update
 }
