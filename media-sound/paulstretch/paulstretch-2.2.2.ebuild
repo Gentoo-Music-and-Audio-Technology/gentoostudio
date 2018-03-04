@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/${PN}-2.2-2"
 
 src_prepare() {
+	default
 	epatch "${FILESDIR}/fix-mp3inputs.patch"
 }
 
