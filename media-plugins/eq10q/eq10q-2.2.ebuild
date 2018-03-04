@@ -17,3 +17,12 @@ RDEPEND="dev-cpp/gtkmm:2.4
 	sci-libs/fftw:3.0"
 DEPEND="${RDEPEND}
 	dev-util/cmake"
+
+src_compile() {
+	CXX="$(tc-getCXX)" emake || die
+}
+
+src_install() {
+	einstall INSTALL_DIR="${D}/usr/$(get_libdir)/lv2" || die
+	dodoc README
+}
