@@ -22,6 +22,9 @@ DEPEND="${RDEPEND}
 	dev-util/cmake"
 
 src_configure() {
+        local mycmakeargs=(
+                -DCMAKE_INSTALL_PREFIX=/usr/$(get_libdir)/lv2
+        )
         cmake-utils_src_configure
 }
 
@@ -32,8 +35,8 @@ src_compile() {
 
 src_install() {
 	cmake-utils_src_install
-	insinto /usr/$(get_libdir)/lv2
-	doins "${FILESDIR}"/sapistaEQv2.lv2/
-	insinto /usr/share/doc
-	doins "${FILESDIR}"/share/doc/"${P}"
+	#insinto /usr/$(get_libdir)/lv2
+	#doins "${FILESDIR}"/sapistaEQv2.lv2/
+	#insinto /usr/share/doc
+	#doins "${FILESDIR}"/share/doc/"${P}"
 }
