@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit cmake-utils
+
 DESCRIPTION="A powerful and flexible parametric equalizer and more"
 HOMEPAGE="http://eq10q.sourceforge.net"
 SRC_URI="https://gentoostudio.org/src/eq10q-2.2.tar.gz"
@@ -18,8 +20,13 @@ RDEPEND="dev-cpp/gtkmm:2.4
 DEPEND="${RDEPEND}
 	dev-util/cmake"
 
+src_configure() {
+        cmake-utils_src_configure
+}
+
 src_compile() {
-	emake || die
+        cmake-utils_src_make
+        cmake-utils_src_compile
 }
 
 src_install() {
