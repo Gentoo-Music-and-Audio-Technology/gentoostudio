@@ -1,0 +1,10 @@
+--- Input/MP3InputS.h	2009-04-23 22:12:04.000000000 +0300
++++ Input/MP3InputSmy.h	2010-07-21 08:34:36.000000000 +0300
+@@ -19,6 +19,7 @@
+ #ifndef MP3_INPUT_H
+ #define MP3_INPUT_H
+ #include <string>
++#include <string.h>
+ #include <stdio.h>
+ #include <mad.h>
+ #include "InputS.h"
