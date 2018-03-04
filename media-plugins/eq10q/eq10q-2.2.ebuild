@@ -19,6 +19,7 @@ DEPEND="${RDEPEND}
 	dev-util/cmake"
 
 src_compile() {
+	emake || die
 }
 
 src_install() {
