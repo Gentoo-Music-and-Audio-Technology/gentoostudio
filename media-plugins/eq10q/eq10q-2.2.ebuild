@@ -30,6 +30,6 @@ src_compile() {
 }
 
 src_install() {
-	einstall INSTALL_DIR="${D}/usr/$(get_libdir)/lv2" || die
+	emake install INSTALL_DIR="${D}/usr/$(get_libdir)/lv2" || die
 	dodoc README
 }
