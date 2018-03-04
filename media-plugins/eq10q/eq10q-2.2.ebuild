@@ -7,7 +7,8 @@ inherit cmake-utils
 
 DESCRIPTION="A powerful and flexible parametric equalizer and more"
 HOMEPAGE="http://eq10q.sourceforge.net"
-SRC_URI="https://gentoostudio.org/src/eq10q-2.2.tar.gz"
+# Not using SourceForge as SRC_URI due to SF being broken
+SRC_URI="https://gentoostudio.org/src/${P}.tar.gz"
 
 LICENSE="GPL"
 SLOT="0"
@@ -32,7 +33,7 @@ src_compile() {
 src_install() {
 	cmake-utils_src_install
 	insinto /usr/$(get_libdir)/lv2
-	doins "${FILESDIR}"
-	#insinto /usr/share/${PN}
-	#doins -r "${WORKDIR}/${GAMEDATA}/."
+	doins "${FILESDIR}"/sapistaEQv2.lv2/
+	insinto /usr/share/doc
+	doins "${FILESDIR}"/share/doc/"${P}"
 }
