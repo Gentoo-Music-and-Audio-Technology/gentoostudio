@@ -19,7 +19,6 @@ DEPEND="${RDEPEND}
 	dev-util/cmake"
 
 src_compile() {
-	CXX="$(tc-getCXX)" emake || die
 }
 
 src_install() {
