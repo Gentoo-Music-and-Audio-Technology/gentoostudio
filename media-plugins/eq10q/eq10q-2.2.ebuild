@@ -28,8 +28,3 @@ src_compile() {
         cmake-utils_src_make
         cmake-utils_src_compile
 }
-
-src_install() {
-	emake install INSTALL_DIR="${D}/usr/$(get_libdir)/lv2" || die
-	dodoc README
-}
