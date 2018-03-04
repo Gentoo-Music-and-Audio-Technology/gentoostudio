@@ -28,3 +28,7 @@ src_compile() {
         cmake-utils_src_make
         cmake-utils_src_compile
 }
+
+src_install() {
+	cmake-utils_src_install CMAKE_USE_DIR="${D}/usr/$(get_libdir)/lv2" || die
+}
