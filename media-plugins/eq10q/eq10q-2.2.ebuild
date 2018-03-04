@@ -30,5 +30,8 @@ src_compile() {
 }
 
 src_install() {
-	cmake-utils_src_install INSTALL_DIR="${D}/usr/$(get_libdir)/lv2" || die
+	cmake-utils_src_install
+	insinto "${D}/usr/$(get_libdir)/lv2"
+	#insinto /usr/share/${PN}
+	#doins -r "${WORKDIR}/${GAMEDATA}/."
 }
