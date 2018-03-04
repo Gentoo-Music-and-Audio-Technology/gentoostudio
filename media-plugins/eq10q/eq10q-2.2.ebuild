@@ -30,5 +30,5 @@ src_compile() {
 }
 
 src_install() {
-	cmake-utils_src_install CMAKE_USE_DIR="${D}/usr/$(get_libdir)/lv2" || die
+	cmake-utils_src_install INSTALL_DIR="${D}/usr/$(get_libdir)/lv2" || die
 }
