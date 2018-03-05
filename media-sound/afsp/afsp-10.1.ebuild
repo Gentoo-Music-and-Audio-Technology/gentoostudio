@@ -22,14 +22,15 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
+
 src_compile() {
-	# Yes, the -j1 is necessary, compile fails otherwise.
-	emake -j1 DESTDIR="${D}" PREFIX="${D}/usr" || die "emake failed"
+          # Yes, the -j1 is necessary, compile fails otherwise.
+        emake -j1
 }
 
 src_install() {
-	#default
-	#emake DESTDIR="${D}/usr" install || die "emake install failed"
-	make ROOT=${D} install || die "make install failed"
-	dodoc Notes.txt README.txt
+        rm -r "${S}"/bin/{Cygwin,Linux,Windows} || die
+        emake DESTDIR=${D} install
+        dodoc Notes.txt README.txt
 }
