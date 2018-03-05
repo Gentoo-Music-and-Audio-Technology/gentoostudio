@@ -24,11 +24,11 @@ S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	# Yes, the -j1 is necessary, compile fails otherwise.
-	emake -j1 PREFIX="${D}/usr" || die "emake failed"
+	emake -j1 DESTDIR="${D}" PREFIX="${D}/usr" || die "emake failed"
 }
 
 src_install() {
-	default
+	#default
 	#emake DESTDIR="${D}/usr" install || die "emake install failed"
 	dodoc Notes.txt README.txt
 }
