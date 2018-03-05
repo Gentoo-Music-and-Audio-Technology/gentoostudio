@@ -29,6 +29,7 @@ src_compile() {
 
 src_install() {
 	#default
-	emake DESTDIR="${D}/usr" install || die "emake install failed"
+	#emake DESTDIR="${D}/usr" install || die "emake install failed"
+	make ROOT=${D} install || die "make install failed"
 	dodoc Notes.txt README.txt
 }
