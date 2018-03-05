@@ -28,6 +28,7 @@ src_compile() {
 }
 
 src_install() {
-	emake install prefix="${D}/usr" || die "emake install failed"
+	default
+	#emake install prefix="${D}/usr" || die "emake install failed"
 	dodoc Notes.txt README.txt
 }
