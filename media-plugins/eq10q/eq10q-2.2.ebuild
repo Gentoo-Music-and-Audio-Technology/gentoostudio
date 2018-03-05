@@ -10,7 +10,7 @@ HOMEPAGE="http://eq10q.sourceforge.net"
 # Not using SourceForge as SRC_URI due to SF being broken
 SRC_URI="https://gentoostudio.org/src/${P}.tar.gz"
 
-LICENSE="GPL"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -22,21 +22,17 @@ DEPEND="${RDEPEND}
 	dev-util/cmake"
 
 src_configure() {
-        local mycmakeargs=(
-                -DCMAKE_INSTALL_PREFIX=/usr/$(get_libdir)/lv2
-        )
-        cmake-utils_src_configure
+	local mycmakeargs=(
+		-DCMAKE_INSTALL_PREFIX=/usr/$(get_libdir)/lv2
+	)
+	cmake-utils_src_configure
 }
 
-src_compile() {
-        cmake-utils_src_make
-        cmake-utils_src_compile
-}
+#src_compile() {
+#        cmake-utils_src_make
+#        cmake-utils_src_compile
+#}
 
 src_install() {
 	cmake-utils_src_install
-	#insinto /usr/$(get_libdir)/lv2
-	#doins "${FILESDIR}"/sapistaEQv2.lv2/
-	#insinto /usr/share/doc
-	#doins "${FILESDIR}"/share/doc/"${P}"
 }
