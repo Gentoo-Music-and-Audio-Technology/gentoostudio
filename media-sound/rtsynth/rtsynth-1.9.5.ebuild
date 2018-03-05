@@ -23,7 +23,7 @@ RDEPEND=">=x11-libs/fltk-1.1.2
 	media-libs/libsndfile
 	|| ( x11-libs/libXext virtual/x11 )
 	media-libs/alsa-lib
-	jack? ( media-sound/jack-audio-connection-kit )"
+	jack? ( virtual/jack )"
 DEPEND=""
 
 S="${WORKDIR}/${MY_P}"
