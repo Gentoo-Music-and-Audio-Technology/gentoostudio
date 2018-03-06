@@ -27,5 +27,5 @@ DOCS=( AUTHORS ChangeLog README )
 
 src_configure() {
 	local myeconfargs=( $(use_with jack jackmidi) )
-	autotools-utils_src_configure
+	default
 }
