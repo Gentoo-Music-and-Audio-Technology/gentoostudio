@@ -1,6 +1,6 @@
 diff -Naru AFsp-v10r1a.orig/Makefile AFsp-v10r1a/Makefile
---- AFsp-v10r1a.orig/Makefile   2018-03-05 20:35:02.038744949 +0100
-+++ AFsp-v10r1a/Makefile        2018-03-05 20:35:10.068744504 +0100
+--- AFsp-v10r1a.orig/Makefile	2018-03-06 08:04:54.410002006 +0100
++++ AFsp-v10r1a/Makefile	2018-03-06 08:08:53.410002615 +0100
 @@ -16,12 +16,12 @@
  INSTALL_DATA = $(INSTALL) -m 664
  INSTALL_DIR = $(INSTALL) -d
@@ -17,14 +17,14 @@ diff -Naru AFsp-v10r1a.orig/Makefile AFsp-v10r1a/Makefile
  
  .PHONY: all libtsp libAO audio test install install_bin install_data \
 @@ -54,9 +54,9 @@
-        @-test -d $(includedir)/libtsp || $(INSTALL_DIR) $(includedir)/libtsp
-        $(INSTALL_DATA) include/libtsp/* $(includedir)/libtsp
-        @-test -d $(mandir)/man1 || $(INSTALL_DIR) $(mandir)/man1
--       $(INSTALL_DATA) man/audio/* $(mandir)/man1
-+       $(INSTALL_DATA) audio/man/* $(mandir)/man1
-        @-test -d $(mandir)/man3 || $(INSTALL_DIR) $(mandir)/man3
--       $(INSTALL_DATA) man/libtsp/AF/* $(mandir)/man3
-+       $(INSTALL_DATA) libtsp/man/AF/* $(mandir)/man3
+ 	@-test -d $(includedir)/libtsp || $(INSTALL_DIR) $(includedir)/libtsp
+ 	$(INSTALL_DATA) include/libtsp/* $(includedir)/libtsp
+ 	@-test -d $(mandir)/man1 || $(INSTALL_DIR) $(mandir)/man1
+-	$(INSTALL_DATA) man/audio/* $(mandir)/man1
++	$(INSTALL_DATA) audio/man/* $(mandir)/man1
+ 	@-test -d $(mandir)/man3 || $(INSTALL_DIR) $(mandir)/man3
+-	$(INSTALL_DATA) man/libtsp/AF/* $(mandir)/man3
++	$(INSTALL_DATA) libtsp/man/AF/* $(mandir)/man3
  
  # Install extras
  install_data:
