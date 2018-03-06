@@ -4,6 +4,7 @@
 EAPI=6
 
 [[ "${PV}" = "9999" ]] && inherit subversion
+inherit eutils
 
 DESCRIPTION="MIDI Arpeggiator w/ JACK Tempo Sync, includes Zonage MIDI splitter/manipulator"
 HOMEPAGE="http://sourceforge.net/projects/${PN}"
