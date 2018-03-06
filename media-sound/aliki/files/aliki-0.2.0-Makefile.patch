@@ -1,0 +1,49 @@
+diff --git a/source/Makefile b/source/Makefile
+index f9a401d..70fa987 100644
+--- a/source/Makefile
++++ b/source/Makefile
+@@ -21,6 +21,7 @@
+ 
+ # Modify as required.
+ #
++CXX=g++
+ PREFIX = /usr/local
+ SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ LIBDIR = lib$(SUFFIX)
+@@ -34,8 +35,6 @@ CXXFLAGS += -Wall -MMD -MP
+ # With debug info
+ CXXFLAGS += -g
+ 
+-CXXFLAGS += -march=native
+-
+ # Uncomment if you use a libsndfile version without support for setting/getting the Ambisonic flags.
+ #
+ #CPPFLAGS += -DNOAMBIS=1
+@@ -50,7 +49,7 @@ aliki:	CPPFLAGS += -I/usr/include/freetype2
+ aliki:	LDLIBS += -lclxclient -lclthreads -lsndfile -lfftw3f -lXft -lX11 -lpthread -lrt
+ aliki:	LDFLAGS += -L$(PREFIX)/$(LIBDIR) -L/usr/X11R6/$(LIBDIR)
+ aliki:	$(ALIKI_O)
+-	g++ $(LDFLAGS) -o $@ $(ALIKI_O) $(LDLIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(ALIKI_O) $(LDLIBS)
+ $(ALIKI_O):
+ -include $(ALIKI_O:%.o=%.d)
+ 
+@@ -60,15 +59,15 @@ ALIKI_RT_O = aliki-rt.o mainthr.o audiothr.o shmem.o lfqueue.o impdata.o
+ aliki-rt:	LDLIBS += -lzita-alsa-pcmi -lclthreads -lsndfile -ljack -lasound -lpthread -lrt
+ aliki-rt:	LDFLAGS += -L$(PREFIX)/$(LIBDIR)
+ aliki-rt:	 $(ALIKI_RT_O) $(LIBCLX)
+-	g++ $(LDFLAGS) -o $@ $(ALIKI_RT_O) $(LDLIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(ALIKI_RT_O) $(LDLIBS)
+ $(ALIKI_RT_O):
+ -include $(ALIKI_RT_O:%.o=%.d)
+ 
+ 
+ 
+ install:	aliki aliki-rt
+-	install -m 755 aliki    $(DESTDIR)$(PREFIX)/bin
+-	install -m 755 aliki-rt $(DESTDIR)$(PREFIX)/bin
++	install -Dm 755 aliki    $(DESTDIR)$(PREFIX)/bin/aliki
++	install -Dm 755 aliki-rt $(DESTDIR)$(PREFIX)/bin/aliki-rt
+ 
+ clean:
+ 	/bin/rm -f *~ *.o *.a *.d *.so

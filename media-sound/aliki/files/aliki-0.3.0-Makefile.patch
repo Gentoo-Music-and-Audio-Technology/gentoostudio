@@ -1,0 +1,47 @@
+diff -ur aliki-0.3.0.orig/source/Makefile aliki-0.3.0/source/Makefile
+--- aliki-0.3.0.orig/source/Makefile	2013-11-29 22:08:57.954937492 +0100
++++ aliki-0.3.0/source/Makefile	2013-11-29 22:11:57.570936483 +0100
+@@ -20,13 +20,13 @@
+ 
+ # Modify as required.
+ #
++CXX=g++
+ PREFIX = /usr/local
+ SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ LIBDIR = lib$(SUFFIX)
+ VERSION = 0.3.0
+ CPPFLAGS += -DVERSION=\"$(VERSION)\" -DPREFIX=\"$(PREFIX)\"
+-CXXFLAGS += -O2 -Wall -MMD -MP
+-CXXFLAGS += -march=native
++CXXFLAGS += -MMD -MP
+ 
+ 
+ all:	aliki aliki-rt
+@@ -39,7 +39,7 @@
+ aliki:	LDLIBS += -lclxclient -lclthreads -lsndfile -lfftw3f -lXft -lX11 -lpthread -lrt
+ aliki:	LDFLAGS += -L$(PREFIX)/$(LIBDIR) -L/usr/X11R6/$(LIBDIR)
+ aliki:	$(ALIKI_O)
+-	g++ $(LDFLAGS) -o $@ $(ALIKI_O) $(LDLIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(ALIKI_O) $(LDLIBS)
+ $(ALIKI_O):
+ -include $(ALIKI_O:%.o=%.d)
+ 
+@@ -49,15 +49,15 @@
+ aliki-rt:	LDLIBS += -lzita-alsa-pcmi -lclthreads -lsndfile -ljack -lasound -lpthread -lrt
+ aliki-rt:	LDFLAGS += -L$(PREFIX)/$(LIBDIR)
+ aliki-rt:	 $(ALIKI_RT_O) $(LIBCLX)
+-	g++ $(LDFLAGS) -o $@ $(ALIKI_RT_O) $(LDLIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(ALIKI_RT_O) $(LDLIBS)
+ $(ALIKI_RT_O):
+ -include $(ALIKI_RT_O:%.o=%.d)
+ 
+ 
+ 
+ install:	aliki aliki-rt
+-	install -m 755 aliki    $(DESTDIR)$(PREFIX)/bin
+-	install -m 755 aliki-rt $(DESTDIR)$(PREFIX)/bin
++	install -Dm 755 aliki    $(DESTDIR)$(PREFIX)/bin/aliki
++	install -Dm 755 aliki-rt $(DESTDIR)$(PREFIX)/bin/aliki-rt
+ 
+ uninstall:
+ 	/bin/rm -f $(DESTDIR)$(PREFIX)/bin/aliki
