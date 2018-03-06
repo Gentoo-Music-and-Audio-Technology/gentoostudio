@@ -30,11 +30,10 @@ DEPEND="${RDEPEND}
 
 DOCS=( AUTHORS ChangeLog README )
 
-#PATCHES=(
-#	"${FILESDIR}/${PN}-doc.patch"
-#	"${FILESDIR}/${PN}-gcc46.patch"
-#	"${FILESDIR}/${PN}-gcc47.patch"
-#)
+PATCHES=(
+	"${FILESDIR}/${PN}-gcc46.patch"
+	"${FILESDIR}/${PN}-gcc47.patch"
+)
 
 [[ "${PV}" = "9999" ]] && PATCHES+=( "${FILESDIR}/${P}-makefile-am.patch" )
 
