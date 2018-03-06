@@ -41,6 +41,7 @@ PATCHES=(
 AUTOTOOLS_AUTORECONF=1
 
 src_install() {
+	default
 	doicon "${S}/src/${PN}.png"
 	doicon "${S}/src/zonage.png"
 	make_desktop_entry "${PN}" Arpage "${PN}" "AudioVideo;Audio;Midi;X-Jack"
