@@ -36,6 +36,7 @@ DEPEND="${RDEPEND}
 CMAKE_USE_DIR="${WORKDIR}/${P}/src"
 
 src_prepare() {
+	export HOST_LDFLAGS="${LDFLAGS} -lpthread"
 	mv Change{l,L}og || die
 	sed -i \
 		-e '/set (CMAKE_CXX_FLAGS_RELEASE/d' \
@@ -50,4 +51,8 @@ src_configure() {
 		-DLV2Plugin=$(usex lv2)
 	)
 	cmake-utils_src_configure
+}
+
+src_install() {
+	gnome2_icon_cache_update
 }
