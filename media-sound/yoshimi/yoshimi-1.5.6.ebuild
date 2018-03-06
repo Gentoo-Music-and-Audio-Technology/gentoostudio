@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake-utils gnome2-utils
 
 DESCRIPTION="A software synthesizer based on ZynAddSubFX"
 HOMEPAGE="http://yoshimi.sourceforge.net/"
@@ -53,7 +53,7 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-#src_install() {
-	# This isn't right, need correct command
-#	gnome2_icon_cache_update
-#}
+src_install() {
+	default
+	gnome2_icon_cache_update
+}
