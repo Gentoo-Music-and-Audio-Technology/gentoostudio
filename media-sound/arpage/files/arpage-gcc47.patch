@@ -1,0 +1,10 @@
+--- arpage-0.3.3/src/jack_process.cc	2010-05-17 21:08:11.000000000 +0100
++++ arpage-0.3.3.new/src/jack_process.cc	2012-01-08 23:30:01.662457371 +0000
+@@ -24,6 +24,7 @@
+ 
+ #include <iostream>
+ #include <cstdio>
++#include <unistd.h>
+ 
+ #define NOTE_ON  1
+ #define NOTE_OFF 0

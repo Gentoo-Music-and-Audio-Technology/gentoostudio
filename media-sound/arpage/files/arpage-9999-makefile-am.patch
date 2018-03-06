@@ -1,0 +1,40 @@
+Index: src/Makefile.am
+===================================================================
+--- src/Makefile.am	(revision 128)
++++ src/Makefile.am	(working copy)
+@@ -12,8 +12,7 @@
+ 	ledblue_on.png \
+ 	ledblue_off.png \
+ 	arpage.png \
+-	zonage.png \
+-	arpageps.ui
++	zonage.png
+ 
+ AM_CPPFLAGS = \
+ 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+@@ -26,24 +25,16 @@
+ 	 -g
+ 
+ bin_PROGRAMS = arpage \
+-	zonage cs102_filter
++	zonage
+ 
+ zonage_SOURCES = \
+ 	event_zone.cc\
+ 	midimsg.cc \
+ 	ccrange.h
+ 
+-cs102_filter_SOURCES = \
+-	cs102_filter.cc\
+-	midimsg.cc \
+-	ccrange.h
+-
+ zonage_LDADD = \
+ 	$(ARPAGE_LIBS)
+ 
+-cs102_filter_LDADD = \
+-	$(ARPAGE_LIBS)
+-
+ arpage_SOURCES = \
+ 	main.cc \
+ 	jack_process.cc \

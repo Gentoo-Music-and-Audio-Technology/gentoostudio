@@ -1,0 +1,18 @@
+--- Makefile.am.orig	2012-09-30 03:55:17.269760770 +0100
++++ Makefile.am	2012-09-30 03:55:36.537155569 +0100
+@@ -3,15 +3,6 @@
+ 
+ SUBDIRS = src po 
+ 
+-arpagedocdir = ${prefix}/share/doc/arpage
+-arpagedoc_DATA = \
+-	README\
+-	COPYING\
+-	AUTHORS\
+-	ChangeLog\
+-	INSTALL\
+-	NEWS
+-
+ 
+ INTLTOOL_FILES = intltool-extract.in \
+ 	intltool-merge.in \

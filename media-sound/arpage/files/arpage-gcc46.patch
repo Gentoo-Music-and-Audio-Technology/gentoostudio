@@ -1,0 +1,11 @@
+diff -ur arpage-0.3.3/src/scales.h arpage-0.3.3.new/src/scales.h
+--- arpage-0.3.3/src/scales.h	2010-05-16 21:02:18.000000000 +0100
++++ arpage-0.3.3.new/src/scales.h	2011-06-24 21:53:42.185597504 +0100
+@@ -20,6 +20,7 @@
+ #define __SCALES_H__
+ 
+ #include <vector>
++#include <cstddef>
+ 
+ //============================================================================
+ //
