@@ -35,4 +35,5 @@ src_install() {
 	use doc && DOCS+=("${S}/doc/aliki-manual.pdf")
 
 	emake -C source DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
+	einstalldocs
 }
