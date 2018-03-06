@@ -53,7 +53,8 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-src_install() {
-	default
-	gnome2_icon_cache_update
-}
+#src_install() {
+	# Works but produces sandbox violations
+#	default
+#	gnome2_icon_cache_update
+#}
