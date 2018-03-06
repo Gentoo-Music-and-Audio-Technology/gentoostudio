@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 CMAKE_USE_DIR="${WORKDIR}/${P}/src"
 
 src_prepare() {
-	export HOST_LDFLAGS="${LDFLAGS} -lpthread"
+	export LDFLAGS="-lpthread ${LDFLAGS}"
 	mv Change{l,L}og || die
 	sed -i \
 		-e '/set (CMAKE_CXX_FLAGS_RELEASE/d' \
