@@ -37,9 +37,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eautoreconf
+	default
 }
 src_configure() {
 	econf
+	default
 }
 src_install() {
 	default
