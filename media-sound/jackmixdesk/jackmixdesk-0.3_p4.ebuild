@@ -36,10 +36,10 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-	default
+	eautoreconf
 }
 src_configure() {
-	default
+	econf
 }
 src_install() {
 	default
