@@ -4,7 +4,7 @@
 EAPI=6
 
 [[ "${PV}" = "9999" ]] && inherit subversion
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="Audio mixer for JACK with OSC control, LASH support and GTK GUI"
 HOMEPAGE="http://sourceforge.net/projects/${PN}"
@@ -35,16 +35,16 @@ DEPEND="${RDEPEND}
 	>=dev-libs/libxml2-2.6.28
 	virtual/pkgconfig"
 
-src_prepare() {
-	eautoreconf
-	default
-}
-src_configure() {
-	econf
-	default
-}
+#src_prepare() {
+#	eautoreconf
+#	default
+#}
+#src_configure() {
+	#econf
+#	default
+#}
 src_install() {
-	default
+	#default
 	doicon "doc/${PN}.svg"
 	make_desktop_entry "${PN}_gtk" JackMixDesk "${PN}" "AudioVideo;Audio;Mixer"
 }
