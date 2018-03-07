@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit eutils toolchain-funcs multilib
+inherit exteutils toolchain-funcs multilib
 
 RESTRICT="mirror"
 DESCRIPTION="An Ambisonic decoder for first and second order"
