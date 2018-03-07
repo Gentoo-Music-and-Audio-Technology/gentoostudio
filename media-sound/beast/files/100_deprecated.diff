@@ -1,0 +1,15 @@
+---
+ bse/Makefile.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- beast.orig/bse/Makefile.in
++++ beast/bse/Makefile.in
+@@ -507,7 +507,7 @@ top_srcdir = @top_srcdir@
+ # need -I$(srcdir) for "bseserver.h" in .genprc.c
+ # need -I. (builddir) for "bsecore.genidl.hh" in bsecore.cc
+ INCLUDES = -I$(top_srcdir) -I$(top_builddir) -I$(srcdir) -I. \
+-	$(BSE_CFLAGS) -DG_DISABLE_DEPRECATED -DG_DISABLE_CONST_RETURNS
++	$(BSE_CFLAGS) -DG_DISABLE_CONST_RETURNS
+ EXTRA_HEADERS =
+ MAINTAINERCLEANFILES = $(GENERATED) $(am__append_2)
+ #	-Wl,-Bsymbolic

@@ -1,0 +1,42 @@
+Description: When DBL_MIN/DBL_MAX or DBL_EPSILON are used in a static
+ assertions g++-4.5 rejects the code.
+From: http://mail.gnome.org/archives/beast/2011-April/msg00004.html
+---
+ birnet/birnetcdefs.h  |   10 ++++++++++
+ birnet/birnetutils.cc |    6 +++---
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+
+--- beast.orig/birnet/birnetcdefs.h
++++ beast/birnet/birnetcdefs.h
+@@ -111,6 +111,16 @@ BIRNET_EXTERN_C_BEGIN();
+ #define BIRNET_CPP_PASTE2(a,b)                  BIRNET_CPP_PASTE2i (a,b)
+ #define BIRNET_STATIC_ASSERT_NAMED(expr,asname) typedef struct { char asname[(expr) ? 1 : -1]; } BIRNET_CPP_PASTE2 (Birnet_StaticAssertion_LINE, __LINE__)
+ #define BIRNET_STATIC_ASSERT(expr)              BIRNET_STATIC_ASSERT_NAMED (expr, compile_time_assertion_failed)
++#define BIRNET_STARTUP_ASSERT_IMPL(expr,asname) \
++  namespace Birnet { \
++    namespace StartupAssert { \
++      struct asname { \
++        asname() { g_assert (expr); } \
++      } BIRNET_CPP_PASTE2(asname,_instance); \
++    } \
++  }
++#define BIRNET_STARTUP_ASSERT(expr)             BIRNET_STARTUP_ASSERT_IMPL(expr, BIRNET_CPP_PASTE2 (Assertion_LINE, __LINE__))
++
+ 
+ /* --- attributes --- */
+ #if     __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)
+--- beast.orig/birnet/birnetutils.cc
++++ beast/birnet/birnetutils.cc
+@@ -254,9 +254,9 @@ BIRNET_STATIC_ASSERT (UINT64_MAX   == +1
+ BIRNET_STATIC_ASSERT (FLT_MIN      <= 1E-37);
+ BIRNET_STATIC_ASSERT (FLT_MAX      >= 1E+37);
+ BIRNET_STATIC_ASSERT (FLT_EPSILON  <= 1E-5);
+-BIRNET_STATIC_ASSERT (DBL_MIN      <= 1E-37);
+-BIRNET_STATIC_ASSERT (DBL_MAX      >= 1E+37);
+-BIRNET_STATIC_ASSERT (DBL_EPSILON  <= 1E-9);
++BIRNET_STARTUP_ASSERT (DBL_MIN      <= 1E-37);
++BIRNET_STARTUP_ASSERT (DBL_MAX      >= 1E+37);
++BIRNET_STARTUP_ASSERT (DBL_EPSILON  <= 1E-9);
+ BIRNET_STATIC_ASSERT (LDBL_MIN     <= 1E-37);
+ BIRNET_STATIC_ASSERT (LDBL_MAX     >= 1E+37);
+ BIRNET_STATIC_ASSERT (LDBL_EPSILON <= 1E-9);
