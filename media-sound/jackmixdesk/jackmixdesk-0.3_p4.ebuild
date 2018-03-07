@@ -1,10 +1,11 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
-EAPI=6
+EAPI="5"
 
 [[ "${PV}" = "9999" ]] && inherit subversion
-inherit autotools eutils
+inherit autotools-utils eutils
 
 DESCRIPTION="Audio mixer for JACK with OSC control, LASH support and GTK GUI"
 HOMEPAGE="http://sourceforge.net/projects/${PN}"
@@ -26,7 +27,7 @@ IUSE=""
 AUTOTOOLS_AUTORECONF="1"
 DOCS=( AUTHORS ChangeLog README TODO )
 
-# See if it works without virtual/liblash
+# See if RDEPEND works without virtual/liblash, which doesn't exist.
 RDEPEND="virtual/jack
 	=x11-libs/gtk+-2*
 	>=media-libs/liblo-0.25
@@ -35,16 +36,8 @@ DEPEND="${RDEPEND}
 	>=dev-libs/libxml2-2.6.28
 	virtual/pkgconfig"
 
-#src_prepare() {
-#	eautoreconf
-#	default
-#}
-#src_configure() {
-	#econf
-#	default
-#}
 src_install() {
-	#default
+	autotools-utils_src_install
 	doicon "doc/${PN}.svg"
 	make_desktop_entry "${PN}_gtk" JackMixDesk "${PN}" "AudioVideo;Audio;Mixer"
 }
