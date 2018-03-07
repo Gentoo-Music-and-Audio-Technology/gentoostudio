@@ -27,11 +27,11 @@ IUSE=""
 AUTOTOOLS_AUTORECONF="1"
 DOCS=( AUTHORS ChangeLog README TODO )
 
-# See if RDEPEND works without virtual/liblash, which doesn't exist.
 RDEPEND="virtual/jack
 	=x11-libs/gtk+-2*
 	>=media-libs/liblo-0.25
-	>=net-dns/libidn-1.13"
+	>=net-dns/libidn-1.13
+	virtual/liblash"
 DEPEND="${RDEPEND}
 	>=dev-libs/libxml2-2.6.28
 	virtual/pkgconfig"
