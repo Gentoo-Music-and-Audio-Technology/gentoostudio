@@ -1,0 +1,86 @@
+# /etc/bash_completion.d/boodler #v3
+mgr=boodle-mgr.py 
+
+#types="agent" # only agents
+types="agent\|sound" # 
+
+typefilter=".*\[\(${types}\)\].*"
+
+
+#20091113 - v3 - typefilter introduction
+#20091113 - v2 - cleanup, documentation, bugfix, substring version
+#20091113 - v1 - initial working version
+
+# does simple bash completion for boodler.py in via wildcard or a two-step process
+#  type
+#    boodler.py <tab><tab> # to get package completion
+#    boodler.py name.me.example/<tab><tab> # for agent completion
+#    boodler.py exam*<tab><tab> # get substring matching completion
+
+
+_boodlelib() 
+{
+	# case insensitive matches
+	if `shopt -q nocasematch`; then 
+		oldnocasematchset=true ;   else oldnocasematchset=false ; 
+	fi
+	shopt -s nocasematch # FIXME - TRAP ME
+	
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+	# packages list (have to remove the last line 'xx packages installed...')	
+    packages=`$mgr -- list 2>/dev/null | sed "$ s/.*//"`
+	
+	
+	case "$cur" in
+	*\*) # WILDCARD - long, thorough search (package/agent completion)
+		cur="${cur%\*}" # removing the wildcard
+		agents=""
+		for p in $packages; do
+			ags=`$mgr contents "$p" 2>/dev/null | grep -e "${typefilter}" | awk '{print $1}'`
+			#echo ags_${ags}_ags
+			for ag in $ags; do 
+				pag="$p/$ag"
+				if [[ "$pag" == *${cur}* ]] ; then
+					#echo "$pag" == *${cur}*
+					
+					agents+="$pag "
+				fi
+			done
+		done
+		
+		COMPREPLY=( ${agents} )
+		;;
+	*/*) # AGENT completion
+		p="${cur%\/}" # removing the trailing slash
+
+  	    ags=`$mgr contents "$p" 2>/dev/null | grep -e "${typefilter}" | awk '{print $1}'`
+		for ag in $ags; do 
+			# echo found $ag
+			agents+="$p/$ag "
+		done
+
+	    opts="$agents"
+		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+		;;
+	*)	# PACKAGE completion 
+		# match first on packages (with slashes at the end)
+		opts=`echo "$packages" | sed "s/\([a-zA-Z0-9]\)$/\1\//"`
+	    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+		;;
+	esac
+
+	# clean-up
+	if ${oldnocasematchset} ; then
+		shopt -s nocasematch
+	else
+		shopt -u nocasematch
+	fi
+	
+    return 0
+}
+
+complete -o nospace -F _boodlelib boodler.py
