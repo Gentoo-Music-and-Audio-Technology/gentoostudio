@@ -29,7 +29,8 @@ DEPEND="${RDEPEND}
 	dev-lang/perl
 	media-libs/ladspa-cmt
 	media-libs/ladspa-sdk
-	>=dev-util/intltool-0.35"
+	>=dev-util/intltool-0.35
+	app-text/pandoc"
 
 src_unpack() {
 	unpack ${A}
