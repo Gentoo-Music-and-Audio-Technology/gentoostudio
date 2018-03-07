@@ -35,6 +35,12 @@ DEPEND="${RDEPEND}
 	>=dev-libs/libxml2-2.6.28
 	virtual/pkgconfig"
 
+src_prepare() {
+	default
+}
+src_configure() {
+	default
+}
 src_install() {
 	default
 	doicon "doc/${PN}.svg"
