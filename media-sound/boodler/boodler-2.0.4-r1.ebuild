@@ -46,7 +46,8 @@ python_prepare() {
 			"${T}"/${EPYTHON}/boodle-ui-qt || die
 	fi
 
-	distutils-r1_python_prepare
+	default
+	#distutils-r1_python_prepare
 }
 
 python_configure_all() {
