@@ -16,14 +16,15 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}
+GHC_VER="8.0.2"
 
 src_install() {
 	dobin "${S}/usr/bin/pandoc"
 	insinto /usr/lib64
-	doins -r "${S}/usr/lib64/ghc-8.0.2/"
-	doins -r "${S}/usr/lib64/pandoc-1.19.2.1/"
-	doins -r "${S}/usr/lib64/x86_64-linux-ghc-8.0.2/"
-	dodoc -r "${S}/usr/share/doc/pandoc-1.19.2.1-r1/"
+	doins -r "${S}/usr/lib64/ghc-${GHC_VER}/"
+	doins -r "${S}/usr/lib64/${P}/"
+	doins -r "${S}/usr/lib64/x86_64-linux-ghc-${GHC_VER}/"
+	dodoc -r "${S}/usr/share/doc/${P}-r1/"
 #	dodir /usr/lib64/ghc-8.0.2/gentoo
 #	insinto /usr/lib64/ghc-8.0.2/gentoo
 #	doins "${S}/usr/lib64/ghc-8.0.2/gentoo/pandoc-1.19.2.1-r1.conf"
