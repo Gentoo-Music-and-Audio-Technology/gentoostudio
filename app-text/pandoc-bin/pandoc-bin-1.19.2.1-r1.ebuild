@@ -19,7 +19,9 @@ S=${WORKDIR}
 
 src_install() {
 	dobin "${S}/usr/bin/pandoc"
-	dodir /usr/lib64/ghc-8.0.2/gentoo
-	insinto /usr/lib64/ghc-8.0.2/gentoo
-	doins "${S}/usr/lib64/ghc-8.0.2/gentoo/pandoc-1.19.2.1-r1.conf"
+	insinto /usr/lib64
+	doins -r ghc-8.0.2/
+#	dodir /usr/lib64/ghc-8.0.2/gentoo
+#	insinto /usr/lib64/ghc-8.0.2/gentoo
+#	doins "${S}/usr/lib64/ghc-8.0.2/gentoo/pandoc-1.19.2.1-r1.conf"
 }
