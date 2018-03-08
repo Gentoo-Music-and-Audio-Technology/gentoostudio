@@ -15,6 +15,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-src_unpack() {
+src_configure() {
 	eautoreconf
+	default
 }
