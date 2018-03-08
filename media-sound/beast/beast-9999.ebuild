@@ -15,7 +15,8 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	app-text/pandoc-bin"
+	app-text/pandoc-bin
+	app-doc/doxygen"
 
 src_configure() {
 	./autogen.sh
