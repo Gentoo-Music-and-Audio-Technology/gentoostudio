@@ -1,5 +1,7 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# Quickpkg'ing pandoc into a binary fails because dev-haskell/yaml is still needed
+# So this is going to serve as the basic to build a binary for beast that GS users can install
 
 EAPI=6
 inherit git-r3 autotools
@@ -15,7 +17,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	app-text/pandoc-bin
+	app-text/pandoc
 	app-doc/doxygen
 	media-gfx/graphviz"
 
