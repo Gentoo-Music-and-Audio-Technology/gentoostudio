@@ -32,7 +32,8 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	app-text/pandoc-bin
 	app-doc/doxygen
-	media-gfx/graphviz"
+	media-gfx/graphviz
+	media-libs/rapicorn"
 
 src_unpack() {
 	unpack ${A}
