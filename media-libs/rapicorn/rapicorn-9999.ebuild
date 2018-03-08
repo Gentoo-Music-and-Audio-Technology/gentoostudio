@@ -33,6 +33,10 @@ DEPEND="${RDEPEND}"
 #	media-gfx/graphviz
 #	app-text/texlive"
 
+src_prepare() {
+	eautoreconf
+}
+
 src_configure() {
 	econf
 }
