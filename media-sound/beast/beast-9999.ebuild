@@ -14,3 +14,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}"
+
+src_unpack() {
+	eautoreconf
+}
