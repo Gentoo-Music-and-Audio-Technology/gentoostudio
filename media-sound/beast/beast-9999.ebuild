@@ -19,6 +19,10 @@ DEPEND="${RDEPEND}
 	app-doc/doxygen
 	media-gfx/graphviz"
 
+pkg_setup() {
+	export PYTHON=/usr/bin/python2
+}
+
 src_prepare() {
 	eautoreconf
 	eapply_user
