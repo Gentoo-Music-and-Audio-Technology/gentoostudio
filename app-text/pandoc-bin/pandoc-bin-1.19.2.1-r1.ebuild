@@ -18,5 +18,5 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}
 
 src_install() {
-	dobin pandoc
+	dobin "${S}/usr/bin/pandoc"
 }
