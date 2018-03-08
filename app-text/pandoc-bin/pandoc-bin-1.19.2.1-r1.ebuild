@@ -14,3 +14,5 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}"
+
+S=${WORKDIR}
