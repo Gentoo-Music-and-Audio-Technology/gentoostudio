@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PYTHON_COMPAT=( python2_7 )
-inherit python-any-r1 git-r3
+inherit git-r3
 
 DESCRIPTION="Graphical UI toolkit for rapid development of user interfaces in C++ and Python"
 HOMEPAGE="https://github.com/tim-janik/rapicorn"
@@ -33,8 +32,11 @@ DEPEND="${RDEPEND}"
 #	media-gfx/graphviz
 #	app-text/texlive"
 
+pkg_setup() {
+	export PYTHON=/usr/bin/python2
+}
+
 src_prepare() {
-	python_set_active_version 2
 	./autogen.sh
 }
 
