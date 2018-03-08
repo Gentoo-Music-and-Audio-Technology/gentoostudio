@@ -17,6 +17,6 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 src_configure() {
-	eautoreconf
+	./autogen.sh
 	default
 }
