@@ -34,17 +34,16 @@ DEPEND="${RDEPEND}"
 #	app-text/texlive"
 
 src_prepare() {
-	eautoreconf
-	default
+	./autogen.sh
 }
 
-src_configure() {
-	econf
-}
+#src_configure() {
+#	econf
+#}
 
-src_compile() {
-	emake -j`nproc`
-	emake -j`nproc` check
-	emake install
-	emake -j`nproc` installcheck
-}
+#src_compile() {
+#	emake -j`nproc`
+#	emake -j`nproc` check
+#	emake install
+#	emake -j`nproc` installcheck
+#}
