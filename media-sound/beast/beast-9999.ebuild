@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit git-r3
+inherit git-r3 autotools
 
 DESCRIPTION="BEAST - the Bedevilled Sound Engine"
 HOMEPAGE="http://beast.gtk.org"
@@ -18,7 +18,6 @@ DEPEND="${RDEPEND}
 	app-text/pandoc-bin
 	app-doc/doxygen"
 
-src_configure() {
-	./autogen.sh
-	default
+src_prepare() {
+	eautoreconf
 }
