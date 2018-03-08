@@ -14,17 +14,18 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+# Not sure this pkg has any rdeps at all.
 RDEPEND="gnome-base/librsvg
 	dev-util/intltool
 	x11-libs/pango
 	dev-libs/libxml2
-	sys-libs/readline
-	media-gfx/graphviz
-	app-text/texlive"
+	sys-libs/readline"
 DEPEND="${RDEPEND}
 	=dev-lang/python-2*
 	dev-python/enum34
 	dev-python/xvfbwrapper
 	dev-python/cython
 	app-doc/doxygen
-	app-text/pandoc-bin"
+	app-text/pandoc-bin
+	media-gfx/graphviz
+	app-text/texlive"
