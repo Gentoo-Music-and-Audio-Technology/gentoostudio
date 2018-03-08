@@ -32,3 +32,14 @@ DEPEND="${RDEPEND}"
 #	app-text/pandoc-bin
 #	media-gfx/graphviz
 #	app-text/texlive"
+
+src_configure() {
+	econf
+}
+
+src_compile() {
+	emake -j`nproc`
+	emake -j`nproc` check
+	emake install
+	emake -j`nproc` installcheck
+}
