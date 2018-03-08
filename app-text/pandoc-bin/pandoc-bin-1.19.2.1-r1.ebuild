@@ -16,3 +16,8 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}
+
+src_install() {
+	insinto "/usr"
+	newins ${S}
+}
