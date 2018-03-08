@@ -20,4 +20,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eautoreconf
+	eapply_user
 }
