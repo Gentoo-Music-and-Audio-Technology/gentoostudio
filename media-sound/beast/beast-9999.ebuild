@@ -14,7 +14,8 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=""
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	app-text/pandoc-bin"
 
 src_configure() {
 	./autogen.sh
