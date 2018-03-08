@@ -19,4 +19,5 @@ S=${WORKDIR}
 
 src_install() {
 	dobin "${S}/usr/bin/pandoc"
+	dodir "${S}/usr/lib64/ghc-8.0.2/gentoo/"
 }
