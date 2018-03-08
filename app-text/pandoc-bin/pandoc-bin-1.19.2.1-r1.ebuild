@@ -18,6 +18,5 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}
 
 src_install() {
-	insinto "/usr"
-	dobin "${S}/usr/bin/pandoc" "/usr/bin/pandoc"
+	dobin pandoc
 }
