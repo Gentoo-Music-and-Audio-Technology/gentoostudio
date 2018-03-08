@@ -16,7 +16,8 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	app-text/pandoc-bin
-	app-doc/doxygen"
+	app-doc/doxygen
+	media-gfx/graphviz"
 
 src_prepare() {
 	eautoreconf
