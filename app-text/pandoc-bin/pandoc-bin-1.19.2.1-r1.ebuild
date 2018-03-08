@@ -19,5 +19,5 @@ S=${WORKDIR}
 
 src_install() {
 	insinto "/usr"
-	newins "${WORKDIR}/usr/bin/pandoc" "/usr/bin/pandoc"
+	newins "${PORTAGE_BUILDDIR}/work/usr/bin/pandoc" "/usr/bin/pandoc"
 }
