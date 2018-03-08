@@ -21,12 +21,17 @@ GHC_VER="8.0.2"
 
 src_install() {
 	dobin "${S}/usr/bin/pandoc"
+
 	insinto /usr/lib64
 	doins -r "${S}/usr/lib64/ghc-${GHC_VER}/"
 	doins -r "${S}/usr/lib64/pandoc-${PV}/"
 	doins -r "${S}/usr/lib64/x86_64-linux-ghc-${GHC_VER}/"
+
+	insinto /usr/share/man/man1
+	doins "${S}/usr/share/man/man1/pandoc.1.bz2"
+
+	insinto /usr/share
+	doins -r "${S}/usr/share/pandoc-${PV}/"
+
 	dodoc -r "${S}/usr/share/doc/pandoc-${PV}-r1/"
-#	dodir /usr/lib64/ghc-8.0.2/gentoo
-#	insinto /usr/lib64/ghc-8.0.2/gentoo
-#	doins "${S}/usr/lib64/ghc-8.0.2/gentoo/pandoc-1.19.2.1-r1.conf"
 }
