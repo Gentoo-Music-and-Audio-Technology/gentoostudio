@@ -3,7 +3,7 @@
 
 EAPI=6
 PYTHON_COMPAT=( python2_7 )
-inherit git-r3 python-any-r1
+inherit python-any-r1 git-r3
 
 DESCRIPTION="Graphical UI toolkit for rapid development of user interfaces in C++ and Python"
 HOMEPAGE="https://github.com/tim-janik/rapicorn"
@@ -34,6 +34,7 @@ DEPEND="${RDEPEND}"
 #	app-text/texlive"
 
 src_prepare() {
+	python_set_active_version 2
 	./autogen.sh
 }
 
