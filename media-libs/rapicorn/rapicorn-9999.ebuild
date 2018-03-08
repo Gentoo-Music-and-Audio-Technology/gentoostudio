@@ -38,6 +38,7 @@ pkg_setup() {
 
 src_prepare() {
 	./autogen.sh
+	default
 }
 
 #src_configure() {
