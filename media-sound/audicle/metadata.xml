@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+                <email>webmaster@gentoostudio.org</email>
+                <name>Gentoo Studio/Damien Moody</name>
+        </maintainer>
+	<longdescription lang="en">
+		A potentially new type of audio programming environment that integrates
+		the programmability of the development environment with elements of the
+		runtime environment.
+	</longdescription>
+</pkgmetadata>
