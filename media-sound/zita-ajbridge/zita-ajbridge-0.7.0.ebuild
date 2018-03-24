@@ -24,8 +24,6 @@ RESTRICT="mirror"
 
 DOCS=(../AUTHORS ../README)
 
-PATCHES=("${FILESDIR}"/${P}-Makefile.patch)
-
 src_compile() {
 	CXX="$(tc-getCXX)" base_src_make
 }
