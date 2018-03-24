@@ -22,8 +22,6 @@ DEPEND="media-libs/alsa-lib
 S=${WORKDIR}/${P}/source
 RESTRICT="mirror"
 
-DOCS=(../AUTHORS ../README)
-
 src_compile() {
 	CXX="$(tc-getCXX)" base_src_make
 }
