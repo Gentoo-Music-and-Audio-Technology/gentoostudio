@@ -27,5 +27,7 @@ src_compile() {
 }
 
 src_install() {
+	dodir /usr/bin
+	dodir /usr/share/man/man1
 	base_src_install PREFIX="${EPREFIX}/usr"
 }
