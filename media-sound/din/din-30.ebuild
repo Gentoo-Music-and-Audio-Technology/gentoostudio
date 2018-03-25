@@ -24,6 +24,9 @@ DEPEND="${RDEPEND}
 	dev-libs/boost"
 
 src_configure(){
+	# from README:
+	#autoreconf -fvi
 	#./configure CXXFLAGS="-O3 -D__UNIX_JACK__" CFLAGS=-O3
+	eautoreconf -fvi
 	econf CXXFLAGS="-O3 -D__UNIX_JACK__" CFLAGS=-O3
 }
