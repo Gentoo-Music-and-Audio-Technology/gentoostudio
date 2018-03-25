@@ -13,6 +13,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 # Not sure if libsdl or libsdl2 is needed here.
+# README has a condition for "if you want ALSA instead of JACK,"
+# but there's generally no reason not to have both.
 RDEPEND="virtual/opengl
 	media-libs/libsdl2
 	virtual/jack
@@ -20,3 +22,8 @@ RDEPEND="virtual/opengl
 DEPEND="${RDEPEND}
 	dev-lang/tcl
 	dev-libs/boost"
+
+src_configure(){
+	#./configure CXXFLAGS="-O3 -D__UNIX_JACK__" CFLAGS=-O3
+	econf CXXFLAGS="-O3 -D__UNIX_JACK__" CFLAGS=-O3
+}
