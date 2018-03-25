@@ -15,10 +15,12 @@ IUSE=""
 # Not sure if libsdl or libsdl2 is needed here.
 # README has a condition for "if you want ALSA instead of JACK,"
 # but there's generally no reason not to have both.
+# media-libs/rtaudio: trying to fix a "terminate called after throwing an instance of 'RtAudioError'"
 RDEPEND="virtual/opengl
 	media-libs/libsdl2
 	virtual/jack
-	media-libs/alsa-lib"
+	media-libs/alsa-lib
+	media-libs/rtaudio"
 DEPEND="${RDEPEND}
 	dev-lang/tcl
 	dev-libs/boost"
