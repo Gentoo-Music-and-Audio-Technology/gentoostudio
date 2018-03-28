@@ -18,7 +18,7 @@ RDEPEND="virtual/jack
 	net-libs/gnutls
 	media-libs/freetype
 	media-libs/sdl-gfx
-	media-libs/sdl2-ttf
+	media-libs/sdl-ttf
 	media-libs/liblo
 	dev-libs/libxml2
 	media-libs/libvorbis
