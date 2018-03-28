@@ -25,8 +25,3 @@ RDEPEND="virtual/jack
 	media-libs/libsndfile
 	media-sound/fluidsynth"
 DEPEND="${RDEPEND}"
-
-src_compile(){
-	eautoreconf -ivf
-	eautomake --add-mising
-}
