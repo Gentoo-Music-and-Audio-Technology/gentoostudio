@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+#inherit cmake-utils
 
 DESCRIPTION="A collection of open-source LV2 plugins"
 HOMEPAGE="http://ssj71.github.io/infamousPlugins/index.html"
