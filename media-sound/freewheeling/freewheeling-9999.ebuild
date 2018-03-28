@@ -23,6 +23,8 @@ RDEPEND="virtual/jack
 	media-sound/fluidsynth"
 DEPEND="${RDEPEND}"
 
+WORKDIR=${PN}
+
 src_configure(){
 	eautoreconf -ivf
 }
