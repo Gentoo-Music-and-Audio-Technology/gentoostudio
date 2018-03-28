@@ -4,7 +4,7 @@
 
 EAPI=6
 
-#inherit cmake-utils
+inherit cmake-utils
 
 DESCRIPTION="A collection of open-source LV2 plugins"
 HOMEPAGE="http://ssj71.github.io/infamousPlugins/index.html"
@@ -27,13 +27,18 @@ DEPEND="${RDEPEND}
 
 CMAKE_USE_DIR="${WORKDIR}/${P}/src"
 
-src_prepare() {
+src_prepare(){
         cmake-utils_src_prepare
-	default
 }
 
-src_configure() {
-        cmake-utils_src_configure
-	default
+src_configure(){
+	cmake-utils_src_configure
 }
 
+src_compile(){
+        cmake-utils_src_compile
+}
+
+src_install(){
+	cmake-utils_src_install
+}
