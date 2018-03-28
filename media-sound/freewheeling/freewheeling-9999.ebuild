@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit git-r3
+
 DESCRIPTION="Configurable interface for capturing audio loops in real-time"
 HOMEPAGE="https://github.com/free-wheeling/freewheeling"
 EGIT_REPO_URI="https://github.com/free-wheeling/freewheeling.git"
@@ -23,7 +25,7 @@ RDEPEND="virtual/jack
 	media-sound/fluidsynth"
 DEPEND="${RDEPEND}"
 
-WORKDIR=${PN}
+#WORKDIR=${PN}
 
 src_configure(){
 	eautoreconf -ivf
