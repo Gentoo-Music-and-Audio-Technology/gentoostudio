@@ -29,9 +29,11 @@ CMAKE_USE_DIR="${WORKDIR}/${P}/src"
 
 src_prepare() {
         cmake-utils_src_prepare
+	default
 }
 
 src_configure() {
         cmake-utils_src_configure
+	default
 }
 
