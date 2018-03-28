@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit git-r3
+inherit git-r3 autotools
 
 DESCRIPTION="Configurable interface for capturing audio loops in real-time"
 HOMEPAGE="https://github.com/free-wheeling/freewheeling"
@@ -25,8 +25,10 @@ RDEPEND="virtual/jack
 	media-sound/fluidsynth"
 DEPEND="${RDEPEND}"
 
-#WORKDIR=${PN}
-
 src_configure(){
 	eautoreconf -ivf
+}
+
+src_compile(){
+	eautomake --add-mising
 }
