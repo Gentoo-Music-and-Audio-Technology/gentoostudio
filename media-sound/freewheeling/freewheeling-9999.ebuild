@@ -17,7 +17,7 @@ IUSE=""
 RDEPEND="virtual/jack
 	net-libs/gnutls
 	media-libs/freetype
-	media-libs/sdl2-gfx
+	media-libs/sdl-gfx
 	media-libs/sdl2-ttf
 	media-libs/liblo
 	dev-libs/libxml2
