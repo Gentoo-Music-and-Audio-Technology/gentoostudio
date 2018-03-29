@@ -1,0 +1,11 @@
+--- tcl_interp.cc	2018-02-28 09:26:07.000000000 -0500
++++ tcl_interp.cc	2018-03-29 09:10:39.031797409 -0500
+@@ -47,7 +47,7 @@
+ 	dlog << "!!! Tcl_Init: OK, ERROR = " << (ret == TCL_OK) << ' ' << (ret == TCL_ERROR) << " !!!" << endl;
+ 
+ #ifdef _GNU_SOURCE
+-  operator() ("source /usr/local/share/din/factory/setup-user-dir.tcl; set for_gnu_linux 1; make-user-dir $for_gnu_linux");
++  operator() ("source /usr/share/din/factory/setup-user-dir.tcl; set for_gnu_linux 1; make-user-dir $for_gnu_linux");
+ #else
+   operator () ("source factory/setup-user-dir.tcl; make-user-dir");
+ #endif

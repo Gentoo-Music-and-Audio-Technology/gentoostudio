@@ -25,6 +25,12 @@ DEPEND="${RDEPEND}
 	dev-lang/tcl
 	dev-libs/boost"
 
+src_prepare() {
+	default
+	epatch "${FILESDIR}"/tcl_interp_sharedir.patch
+	eautoreconf
+}
+
 src_configure(){
 	# from README:
 	#autoreconf -fvi
