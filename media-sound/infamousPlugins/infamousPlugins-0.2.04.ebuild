@@ -25,11 +25,11 @@ RDEPEND="x11-libs/ntk
 DEPEND="${RDEPEND}
 	dev-util/cmake"
 
-CMAKE_USE_DIR="${WORKDIR}/${P}/src"
+CMAKE_USE_DIR="${WORKDIR}/${P}"
 
-#src_prepare(){
-#       cmake-utils_src_prepare
-#}
+src_prepare(){
+       cmake-utils_src_prepare
+}
 
 src_configure(){
 	cmake-utils_src_configure
