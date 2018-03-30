@@ -4,6 +4,8 @@
 
 EAPI=6
 
+inherit autotools
+
 DESCRIPTION="Collection of open-source LADSPA, LV2 and LinuxVST plugins"
 HOMEPAGE="http://lsp-plug.in/"
 SRC_URI="https://gentoostudio.org/src/${P}-x86_64.tar.gz"
