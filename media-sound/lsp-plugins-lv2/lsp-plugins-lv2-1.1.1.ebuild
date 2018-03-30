@@ -18,3 +18,5 @@ RDEPEND="virtual/jack
 	dev-libs/expat
 	x11-libs/cairo"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${P}-x86_64"
