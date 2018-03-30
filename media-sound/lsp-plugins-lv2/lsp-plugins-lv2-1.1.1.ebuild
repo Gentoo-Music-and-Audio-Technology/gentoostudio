@@ -1,10 +1,9 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # Re-hosted from SourceForge, which is unreliable
+# Binary install, just cp to /usr/lib64/lv2
 
 EAPI=6
-
-inherit autotools
 
 DESCRIPTION="Collection of open-source LADSPA, LV2 and LinuxVST plugins"
 HOMEPAGE="http://lsp-plug.in/"
@@ -23,6 +22,7 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${P}-x86_64"
 
-src_compile(){
-	default
+src_install(){
+	insinto /usr/lib64/lv2
+	doins -r lsp-plugins.lv2
 }
