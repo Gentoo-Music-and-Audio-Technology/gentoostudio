@@ -22,3 +22,7 @@ RDEPEND="virtual/jack
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${P}-x86_64"
+
+src_compile(){
+	default
+}
