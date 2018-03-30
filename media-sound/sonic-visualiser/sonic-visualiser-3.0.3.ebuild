@@ -54,6 +54,7 @@ sv_disable_opt() {
 }
 
 src_prepare() {
+	default
 	epatch "${FILESDIR}/notest.patch"
 
 	use id3tag || sv_disable_opt id3tag
