@@ -1,0 +1,49 @@
+# Author: Karl Lindén (lilrc) <lilrc@users.sourceforge.net>
+# Purpose:
+#   * Fix two typos
+#   * Assume fltk is installed if fltk-config is
+# Not sent upstream.
+# Patch against version 9999 sent upstream 07 April 2013
+
+diff -ur rakarrack-0.6.1.orig/configure.in rakarrack-0.6.1/configure.in
+--- rakarrack-0.6.1.orig/configure.in	2013-04-07 15:04:50.542921160 +0200
++++ rakarrack-0.6.1/configure.in	2013-04-07 15:06:18.858920664 +0200
+@@ -16,7 +16,7 @@
+ 
+ 
+ AC_ARG_ENABLE(sse,
+-AC_HELP_STRING([--enable-see],[enable sse (default=automatic check)]),
++AC_HELP_STRING([--enable-sse],[enable sse (default=automatic check)]),
+ [ac_sse="$enableval"])
+ 
+ if test "x$ac_sse" = "xyes"; then
+@@ -26,7 +26,7 @@
+ fi
+ 
+ AC_ARG_ENABLE(sse2,
+-AC_HELP_STRING([--enable-see2],[enable sse2 (default=automatic check)]),
++AC_HELP_STRING([--enable-sse2],[enable sse2 (default=automatic check)]),
+ [ac_sse2="$enableval"])
+ 
+ if test "x$ac_sse2" = "xyes"; then
+@@ -53,6 +53,8 @@
+ AC_CHECK_PROG([FLTKCONFIG], [fltk-config], [fltk-config])
+ if test -z "$FLTKCONFIG"; then
+   AC_MSG_ERROR([fltk not installed!])
++else
++  ac_fltk="yes"
+ fi
+ AC_CHECK_PROG([ACONNECT],[aconnect],[aconnect])
+ if test -z "$ACONNECT"; then
+@@ -119,11 +121,6 @@
+ 
+ fi
+ 
+-AC_CHECK_LIB([fltk], [main], [ac_fltk="yes"], [ac_fltk="no"])
+-if test "x$ac_fltk" = "xno"; then
+-AC_MSG_ERROR([FLTK library not found.])
+-fi
+-
+ AC_CHECK_LIB([Xpm],[main], [ac_Xpm="yes"], [ac_Xpm="no"])
+ if test "x$ac_Xpm" = "xno"; then
+ AC_MSG_ERROR([Xpm library not found.])
