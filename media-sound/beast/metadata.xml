@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+	<longdescription>
+Beast is a digital synthesizer and music creation system, released as Free Software under the GNU 
+LGPL-2.1+. It has support for Linux Audio Plugins (LADSPA), multi-track editing, unlimited undo, 
+real-time synthesis, MIDI and various audio formats like WAV, AIFF, Vorbis, Soundfont 2, Gus 
+Patch, FLAC and MP3 files, 32bit audio rendering, full duplex support, multi-core audio rendering, 
+SIMD utilisation, precise timing at sample granularity, FFT spectrograms and MIDI automation. The 
+project is translated into a variety of languages.
+	</longdescription>
 	<maintainer type="person">
 		<email>webmaster@gentoostudio.org</email>
 		<name>Gentoo Studio/Damien Moody</name>
