@@ -22,7 +22,7 @@ RDEPEND=">=sci-libs/fftw-3.3.4:3.0=
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5[-gles2]
 	alsa? ( media-libs/alsa-lib )
-	jack? ( media-sound/jack2 )
+	jack? ( virtual/jack )
 	portaudio? ( media-libs/portaudio )"
 
 DEPEND="${RDEPEND}
