@@ -27,7 +27,8 @@ RDEPEND="gnome-base/librsvg
 	dev-python/xvfbwrapper
 	dev-python/graphviz
 	app-text/texlive
-	app-text/pandoc"
+	app-text/pandoc
+	media-libs/libpng:1.2"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-python/cython
