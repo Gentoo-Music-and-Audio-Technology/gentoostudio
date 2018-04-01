@@ -21,7 +21,7 @@ IUSE="doc ffmpeg flac mad mpg123 mysql nls opus speex twolame"
 RDEPEND="dev-python/eyeD3[${PYTHON_USEDEP}]
 	dev-python/pygtk[${PYTHON_USEDEP}]
 	media-libs/libsamplerate
-	>=media-libs/libshout-idjc-2.3.1[speex?]
+	media-libs/libshout-idjc
 	media-libs/libsndfile
 	media-libs/libvorbis
 	media-libs/mutagen[${PYTHON_USEDEP}]
