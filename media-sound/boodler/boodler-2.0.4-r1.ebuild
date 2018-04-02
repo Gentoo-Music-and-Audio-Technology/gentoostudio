@@ -18,7 +18,7 @@ REQUIRED_USE="shout? ( vorbis )"
 RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0.17a )
 	jack? ( >=media-libs/bio2jack-0.9 )
 	lame? ( >=media-sound/lame-3.98.2-r1 )
-	shout? ( media-libs/libshout-idjc )
+	shout? ( media-libs/libshout )
 	vorbis? ( >=media-libs/libvorbis-1.2.1_rc1-r2 )"
 DEPEND="${RDEPEND}
 	qt4? ( >=dev-python/PyQt4-4.7.3[X] )"
