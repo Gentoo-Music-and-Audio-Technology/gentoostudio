@@ -1,6 +1,5 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# Modified to use libshout-idjc instead of libshout
 # Not an official Gentoo ebuild, for Gentoo Studio only
 # Lates Videolan-official version as of 2018-04-01 is 3.0.1
 
@@ -166,7 +165,7 @@ RDEPEND="
 	schroedinger? ( >=media-libs/schroedinger-1.0.10:0 )
 	sdl-image? ( media-libs/sdl-image:0 )
 	sftp? ( net-libs/libssh2:0 )
-	shout? ( media-libs/libshout-idjc )
+	shout? ( media-libs/libshout:0 )
 	sid? ( media-libs/libsidplay:2 )
 	skins? (
 		x11-libs/libXext:0
