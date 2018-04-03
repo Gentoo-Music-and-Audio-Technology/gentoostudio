@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
-	epatch "${FILESDIR}"/tcl_interp_sharedir.patch
+	epatch -p0 "${FILESDIR}"/tcl_interp_sharedir.patch
 	eautoreconf
 }
 
