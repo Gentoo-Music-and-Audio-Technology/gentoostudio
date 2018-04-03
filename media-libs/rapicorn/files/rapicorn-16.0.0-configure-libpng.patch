@@ -1,0 +1,15 @@
+--- configure	2016-04-06 17:03:05.327730690 -0500
++++ configure	2018-04-03 08:25:45.869925477 -0500
+@@ -20356,10 +20356,10 @@
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 	    LIBPNG=`$PKG_CONFIG --libs libpng12`
+-	elif $PKG_CONFIG --exists libpng13 ; then
++	elif $PKG_CONFIG --exists libpng16 ; then
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-	    LIBPNG=`$PKG_CONFIG --libs libpng13`
++	    LIBPNG=`$PKG_CONFIG --libs libpng16`
+ 	else
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
