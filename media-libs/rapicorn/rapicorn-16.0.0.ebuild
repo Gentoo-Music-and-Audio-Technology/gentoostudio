@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	# Patch allows Rapicorn to try to use more recent libpng so we don't need libpng:1.2
-	epatch "${FILESDIR}"/"${P}"-configureaclibpng16.patch
+	epatch "${FILESDIR}"/"${P}"-configureac-libpng16.patch
 	epatch "${FILESDIR}"/"${P}"-configure-libpng.patch
 	eautoreconf
 }
