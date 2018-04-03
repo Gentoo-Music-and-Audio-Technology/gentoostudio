@@ -1,0 +1,11 @@
+--- sinfex.l	2017-06-26 15:43:43.000000000 -0500
++++ sinfex.l	2018-04-03 10:47:10.219744447 -0500
+@@ -2,7 +2,7 @@
+  *                                                	-*-mode:c++;-*-
+  */
+ %option 8bit reentrant stack noyywrap yylineno
+-%option ansi-definitions ansi-prototypes nounistd
++%option ansi-prototypes nounistd
+ %option bison-bridge bison-locations
+ %option nodefault warn
+ %option prefix="flex_yy"

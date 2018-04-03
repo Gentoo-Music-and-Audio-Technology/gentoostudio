@@ -36,3 +36,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-python/cython
 	app-doc/doxygen"
+
+src_prepare(){
+	eapply -p0 "${FILESDIR}/${P}"-sinfex-ansi.patch
+	eapply_user
+}
