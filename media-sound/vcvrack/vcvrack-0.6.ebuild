@@ -3,11 +3,12 @@
 
 EAPI=6
 
-inherit git-r3
+inherit autotools git-r3
 
-DESCRIPTION=""
-HOMEPAGE=""
-EGIT_SRC_URI="https://github.com/VCVRack/Rack.git"
+DESCRIPTION="Open-source virtual modular synthesizer"
+HOMEPAGE="https://vcvrack.com/"
+EGIT_REPO_URI="https://github.com/VCVRack/Rack.git"
+EGIT_BRANCH="v0.6"
 # need git checkout v0.6
 
 LICENSE=""
@@ -18,6 +19,6 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-src_unpack(){
-	git-r3_checkout v0.6
-}
+#src_unpack(){
+#	git-r3_checkout v0.6
+#}
