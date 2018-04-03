@@ -35,7 +35,13 @@ DEPEND="${RDEPEND}
 	dev-python/cython
 	app-doc/doxygen"
 
-PATCHES=(
-	"${FILESDIR}/${P}"-configureac-libpng16.patch
-	"${FILESDIR}/${P}"-configure-libpng.patch
-)
+src_prepare(){
+	eapply -p0 "${FILESDIR}/${P}"-configureac-libpng16.patch
+	eapply -p0 "${FILESDIR}/${P}"-configure-libpng.patch
+	eapply_user
+}
+
+#PATCHES=(
+#	"${FILESDIR}/${P}"-configureac-libpng16.patch
+#	"${FILESDIR}/${P}"-configure-libpng.patch
+#)
