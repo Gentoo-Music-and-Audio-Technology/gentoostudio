@@ -28,9 +28,8 @@ DEPEND="${RDEPEND}
 	dev-libs/boost"
 
 src_prepare() {
-	default
 	epatch -p0 "${FILESDIR}"/tcl_interp_sharedir.patch
-	eautoreconf
+	epatch_user
 }
 
 src_configure(){
