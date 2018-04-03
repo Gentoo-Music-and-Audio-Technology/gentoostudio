@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit autotools eutils
+
 DESCRIPTION="Software musical instrument and audio synthesizer"
 HOMEPAGE="https://dinisnoise.org"
 SRC_URI=""https://archive.org/download/dinisnoise_source_code/${P}.tar.gz
