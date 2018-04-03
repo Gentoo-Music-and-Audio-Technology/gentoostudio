@@ -1,5 +1,6 @@
---- sinfex.l	2017-06-26 15:43:43.000000000 -0500
-+++ sinfex.l	2018-04-03 10:47:10.219744447 -0500
+diff -Naur rapicorn-17.0.0.orig/ui/sinfex.l rapicorn-17.0.0/ui/sinfex.l
+--- rapicorn-17.0.0.orig/ui/sinfex.l	2018-04-03 10:56:08.158796372 -0500
++++ rapicorn-17.0.0/ui/sinfex.l	2018-04-03 10:57:00.101801386 -0500
 @@ -2,7 +2,7 @@
   *                                                	-*-mode:c++;-*-
   */
