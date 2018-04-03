@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit autotools git-r3
+inherit git-r3
 
 DESCRIPTION="Open-source virtual modular synthesizer"
 HOMEPAGE="https://vcvrack.com/"
