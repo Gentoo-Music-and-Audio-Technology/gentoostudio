@@ -41,3 +41,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/"${P}".libpng16.patch
 	eautoreconf
 }
+
+src_configure(){
+	default
+}
