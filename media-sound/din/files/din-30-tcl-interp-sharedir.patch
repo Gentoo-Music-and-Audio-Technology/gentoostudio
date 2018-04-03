@@ -1,5 +1,6 @@
---- tcl_interp.cc	2018-02-28 09:26:07.000000000 -0500
-+++ tcl_interp.cc	2018-03-29 09:10:39.031797409 -0500
+diff -Naur din-30.orig/src/tcl_interp.cc din-30/src/tcl_interp.cc
+--- din-30.orig/src/tcl_interp.cc	2018-04-03 11:26:02.654969590 -0500
++++ din-30/src/tcl_interp.cc	2018-04-03 11:27:06.450975748 -0500
 @@ -47,7 +47,7 @@
  	dlog << "!!! Tcl_Init: OK, ERROR = " << (ret == TCL_OK) << ' ' << (ret == TCL_ERROR) << " !!!" << endl;
  
