@@ -28,8 +28,16 @@ RDEPEND="gnome-base/librsvg
 	dev-python/graphviz
 	app-text/texlive
 	app-text/pandoc
-	media-libs/libpng:1.2"
+	media-libs/libpng"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-python/cython
 	app-doc/doxygen"
+
+src_prepare() {
+	default
+	# Patch allows Rapicorn to try to use more recent libpng so we don't need libpng:1.2
+	epatch "${FILESDIR}"/"${P}".libpng16.patch
+	eautoreconf
+}
+

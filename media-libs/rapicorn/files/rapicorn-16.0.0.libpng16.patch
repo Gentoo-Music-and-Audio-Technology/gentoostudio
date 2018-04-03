@@ -1,0 +1,11 @@
+--- configure.ac	2016-04-06 17:02:36.083682851 -0500
++++ configure.ac	2018-04-03 07:24:45.384572141 -0500
+@@ -440,7 +440,7 @@
+ 	if $PKG_CONFIG --exists libpng12 ; then
+ 	    AC_MSG_RESULT(yes)
+ 	    LIBPNG=`$PKG_CONFIG --libs libpng12`
+-	elif $PKG_CONFIG --exists libpng13 ; then
++	elif $PKG_CONFIG --exists libpng16 ; then
+ 	    AC_MSG_RESULT(yes)
+ 	    LIBPNG=`$PKG_CONFIG --libs libpng13`
+ 	else
