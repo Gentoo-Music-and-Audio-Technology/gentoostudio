@@ -1,5 +1,6 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+
 # Required for media-sound/beast-0.11.0. Future versions of beast will not depend on Rapicorn.
 # Guessing at dev-python/xvfbwrapper instead of x11-misc/xvfb-run.
 # Guessing at dev-python/graphviz, which pulls in media-gfx/graphviz anyway.
@@ -7,7 +8,7 @@
 
 EAPI=6
 
-inherit autotools
+inherit autotools eutils
 
 DESCRIPTION="GUI toolkit offering concise declarative UI design notation"
 HOMEPAGE="https://testbit.eu/wiki/Rapicorn_Org"
@@ -21,14 +22,14 @@ IUSE=""
 RDEPEND="gnome-base/librsvg
 	x11-libs/pango
 	dev-libs/libxml2
-	sys-libs/readline
+	sys-libs/readline:0
 	dev-lang/python:2.7
 	dev-python/enum34
 	dev-python/xvfbwrapper
 	dev-python/graphviz
 	app-text/texlive
 	app-text/pandoc
-	media-libs/libpng"
+	media-libs/libpng:0"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-python/cython
@@ -40,4 +41,3 @@ src_prepare() {
 	epatch "${FILESDIR}"/"${P}".libpng16.patch
 	eautoreconf
 }
-
