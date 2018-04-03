@@ -20,5 +20,5 @@ DEPEND="${RDEPEND}"
 
 src_configure(){
 	# Need the equivalent of "make dep"
-	emake depend
+	emake dep
 }
