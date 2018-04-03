@@ -8,7 +8,9 @@
 
 EAPI=6
 
-inherit autotools eutils
+PYTHON_COMPAT=( python2_7 )
+
+inherit autotools eutils python-single-r1
 
 DESCRIPTION="GUI toolkit offering concise declarative UI design notation"
 HOMEPAGE="https://testbit.eu/wiki/Rapicorn_Org"
@@ -40,8 +42,3 @@ src_prepare(){
 	eapply -p0 "${FILESDIR}/${P}"-configure-libpng.patch
 	eapply_user
 }
-
-#PATCHES=(
-#	"${FILESDIR}/${P}"-configureac-libpng16.patch
-#	"${FILESDIR}/${P}"-configure-libpng.patch
-#)
