@@ -8,8 +8,7 @@ inherit autotools git-r3
 DESCRIPTION="Open-source virtual modular synthesizer"
 HOMEPAGE="https://vcvrack.com/"
 EGIT_REPO_URI="https://github.com/VCVRack/Rack.git"
-EGIT_BRANCH="v${PN}"
-# need git checkout v0.6
+EGIT_BRANCH="v0.5"
 
 LICENSE=""
 SLOT="0"
