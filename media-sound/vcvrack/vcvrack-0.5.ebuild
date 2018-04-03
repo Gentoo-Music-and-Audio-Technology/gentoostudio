@@ -22,3 +22,7 @@ src_configure(){
 	# Need the equivalent of "make dep"
 	emake dep
 }
+
+src_compile(){
+	emake
+}
