@@ -18,6 +18,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-#src_unpack(){
-#	git-r3_checkout v0.6
-#}
+src_configure(){
+	# Need the equivalent of "make dep"
+	emake depend
+}
