@@ -1,11 +1,14 @@
 --- configure.ac	2016-04-06 17:02:36.083682851 -0500
-+++ configure.ac	2018-04-03 07:24:45.384572141 -0500
-@@ -440,7 +440,7 @@
++++ configure.ac	2018-04-03 07:57:49.288763642 -0500
+@@ -440,9 +440,9 @@
  	if $PKG_CONFIG --exists libpng12 ; then
  	    AC_MSG_RESULT(yes)
  	    LIBPNG=`$PKG_CONFIG --libs libpng12`
 -	elif $PKG_CONFIG --exists libpng13 ; then
 +	elif $PKG_CONFIG --exists libpng16 ; then
  	    AC_MSG_RESULT(yes)
- 	    LIBPNG=`$PKG_CONFIG --libs libpng13`
+-	    LIBPNG=`$PKG_CONFIG --libs libpng13`
++	    LIBPNG=`$PKG_CONFIG --libs libpng16`
  	else
+ 	    AC_MSG_RESULT(no)
+ 	    AC_MSG_ERROR([PNG image library libpng (>= 1.2) is missing, but required])
