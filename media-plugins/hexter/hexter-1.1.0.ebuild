@@ -24,11 +24,14 @@ DEPEND="${RDEPEND}
 	media-libs/ladspa-sdk
 	virtual/pkgconfig"
 
-src_configure() {
+src_prepare(){
 	default
+	eautoreconf
+}
+
+src_configure() {
 	econf $(use_with gtk2) \
 		$(use_with readline textui)
-	eautoreconf
 }
 
 src_install() {
