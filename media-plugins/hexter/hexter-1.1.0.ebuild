@@ -25,8 +25,10 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_configure() {
+	default
 	econf $(use_with gtk2) \
 		$(use_with readline textui)
+	eautoreconf
 }
 
 src_install() {
