@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit git-r3
+inherit autotools git-r3
 
 DESCRIPTION="Yamaha DX7 modeling DSSI plugin"
 HOMEPAGE="http://dssi.sourceforge.net/hexter.html"
