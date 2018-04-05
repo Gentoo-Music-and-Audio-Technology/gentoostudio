@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="gtk2 readline"
 
 RDEPEND="media-libs/alsa-lib
-	>=media-libs/dssi-0.4
-	>=media-libs/liblo-0.12
+	media-libs/dssi
+	media-libs/liblo
 	gtk2? ( x11-libs/gtk+:2 )
 	readline? ( sys-libs/readline:0
 		sys-libs/ncurses )"
@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 
 src_prepare(){
 	default
-	eautoreconf m4_pattern_allow
+	eautoconf
 }
 
 src_configure() {
