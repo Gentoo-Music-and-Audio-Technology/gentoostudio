@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 
 src_prepare(){
 	default
-	eautoreconf --m4_pattern_allow
+	eautoreconf m4_pattern_allow
 }
 
 src_configure() {
