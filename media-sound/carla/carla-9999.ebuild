@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 
 IUSE="alsa jack +lv2ui +osc plugins pulseaudio +rdf samplers +X"
 
-RDEPEND="|| ( dev-python/PyQt4 dev-python/PyQt5 )
+RDEPEND="dev-python/PyQt5
         alsa? ( media-libs/alsa-lib )
         jack? ( virtual/jack )
         lv2ui? ( x11-libs/gtk+:2 x11-libs/gtk+:3 dev-python/PyQt4 dev-python/PyQt5 )
