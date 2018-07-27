@@ -19,7 +19,7 @@ IUSE="alsa jack +lv2ui +osc plugins pulseaudio +rdf samplers +X"
 RDEPEND="dev-python/PyQt5
         alsa? ( media-libs/alsa-lib )
         jack? ( virtual/jack )
-        lv2ui? ( x11-libs/gtk+:2 x11-libs/gtk+:3 dev-python/PyQt4 dev-python/PyQt5 )
+        lv2ui? ( x11-libs/gtk+:2 x11-libs/gtk+:3 dev-python/PyQt5 )
         osc? ( media-libs/liblo )
         plugins? ( sci-libs/fftw:3.0 dev-libs/mini-xml sys-libs/zlib x11-libs/ntk virtual/opengl media-libs/libprojectm-qt )
         pulseaudio? ( media-sound/pulseaudio )
