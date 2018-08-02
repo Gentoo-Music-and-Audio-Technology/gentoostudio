@@ -17,9 +17,9 @@ KEYWORDS="amd64 x86"
 IUSE="debug"
 
 RDEPEND=">=media-libs/libprojectm-2.1.0
-	dev-qt/qtcore:4
-	dev-qt/qtgui:4
-	dev-qt/qtopengl:4"
+	dev-qt/qtcore
+	dev-qt/qtgui
+	dev-qt/qtopengl"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
