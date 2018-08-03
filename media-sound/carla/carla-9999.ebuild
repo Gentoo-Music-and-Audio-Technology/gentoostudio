@@ -21,7 +21,7 @@ RDEPEND="dev-python/PyQt5
         jack? ( virtual/jack )
         lv2ui? ( x11-libs/gtk+:2 x11-libs/gtk+:3 dev-python/PyQt5 )
         osc? ( media-libs/liblo )
-        plugins? ( sci-libs/fftw:3.0 dev-libs/mini-xml sys-libs/zlib x11-libs/ntk virtual/opengl media-libs/libprojectm-qt )
+        plugins? ( sci-libs/fftw:3.0 dev-libs/mini-xml sys-libs/zlib x11-libs/ntk virtual/opengl )
         pulseaudio? ( media-sound/pulseaudio )
         rdf? ( dev-python/rdflib )
         samplers? ( media-sound/fluidsynth media-sound/linuxsampler )
