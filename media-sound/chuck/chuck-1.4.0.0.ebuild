@@ -22,10 +22,6 @@ DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.4.0.0-makefile.patch
-)
-
 compile_backend() {
 	backend=$1
 	pushd "${S}/src" &>/dev/null || die
