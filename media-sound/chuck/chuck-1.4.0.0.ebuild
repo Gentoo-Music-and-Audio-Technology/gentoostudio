@@ -23,7 +23,6 @@ DEPEND="${RDEPEND}
 	sys-devel/flex"
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-1.4.0.0-hid-smc.patch
 	"${FILESDIR}"/${PN}-1.4.0.0-makefile.patch
 )
 
