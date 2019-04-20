@@ -8,11 +8,11 @@ All ebuilds:
 
 To use this repo, edit /etc/portage/repos.conf/GentooStudio.conf:
 
-[GentooStudio]
-location = /usr/local/portage
-sync-type = git
-sync-uri = https://github.com/audiodef/gentoostudio.git
-auto-sync = yes
+    [GentooStudio]
+    location = /usr/local/portage
+    sync-type = git
+    sync-uri = https://github.com/audiodef/gentoostudio.git
+    auto-sync = yes
 
 Next time you emerge --sync or eix-sync, this repo will be 
 picked-up/updated.
