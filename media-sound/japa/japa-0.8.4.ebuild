@@ -17,8 +17,8 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	media-libs/alsa-lib
-	>=media-libs/libclthreads-2.2.1
-	>=media-libs/libclxclient-3.6.1
+	>=dev-libs/libclthreads-2.2.1
+	>=x11-libs/libclxclient-3.6.1
 	media-libs/zita-alsa-pcmi
 	virtual/jack
 	sci-libs/fftw:3.0
