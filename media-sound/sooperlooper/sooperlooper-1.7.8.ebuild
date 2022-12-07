@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 WX_GTK_VER=3.0
 
 inherit autotools flag-o-matic wxwidgets toolchain-funcs
@@ -37,9 +37,6 @@ S="${WORKDIR}/${P/_p*}"
 DOCS=( OSC README )
 
 PATCHES=(
-	"${FILESDIR}"/${P}-wx3.0.patch
-	"${FILESDIR}"/${P}-libsigc28.patch
-	"${FILESDIR}"/${P}-clash.patch
 )
 
 src_prepare() {
