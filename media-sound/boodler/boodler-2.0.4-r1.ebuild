@@ -22,6 +22,7 @@ RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0.17a )
 	vorbis? ( >=media-libs/libvorbis-1.2.1_rc1-r2 )"
 DEPEND="${RDEPEND}
 	qt5? ( >=dev-python/PyQt5-5.15.7[X] )"
+BDEPEND="${PYTHON_DEPS}"
 
 S=${WORKDIR}/Boodler-${PV}
 
