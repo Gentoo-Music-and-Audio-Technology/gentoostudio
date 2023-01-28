@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-#PYTHON_COMPAT=( python{2_5,2_6,2_7} )
 PYTHON_COMPAT=( python3_{6,7,8,9} )
 inherit distutils-r1 bash-completion-r1
 
@@ -13,7 +12,7 @@ SRC_URI="http://boodler.org/dl/Boodler-${PV}.tar.gz"
 LICENSE="LGPL-2 GPL-2 public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa bash-completion coreaudio doc intmath jack lame qt4 shout vorbis"
+IUSE="alsa bash-completion coreaudio doc intmath jack lame qt5 shout vorbis"
 REQUIRED_USE="shout? ( vorbis )"
 
 RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0.17a )
@@ -22,7 +21,7 @@ RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0.17a )
 	shout? ( media-libs/libshout )
 	vorbis? ( >=media-libs/libvorbis-1.2.1_rc1-r2 )"
 DEPEND="${RDEPEND}
-	qt4? ( >=dev-python/PyQt4-4.7.3[X] )"
+	qt5? ( >=dev-python/PyQt5-5.15.7[X] )"
 
 S=${WORKDIR}/Boodler-${PV}
 
