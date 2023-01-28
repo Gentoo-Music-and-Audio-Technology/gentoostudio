@@ -15,13 +15,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="alsa bash-completion coreaudio doc intmath jack lame qt5 shout vorbis"
 REQUIRED_USE="shout? ( vorbis )"
 
-RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0.17a )
-	jack? ( >=media-libs/bio2jack-0.9 )
-	lame? ( >=media-sound/lame-3.98.2-r1 )
+RDEPEND="alsa? ( media-libs/alsa-lib )
+	jack? ( media-libs/bio2jack )
+	lame? ( media-sound/lame )
 	shout? ( media-libs/libshout )
-	vorbis? ( >=media-libs/libvorbis-1.2.1_rc1-r2 )"
+	vorbis? ( media-libs/libvorbis )"
 DEPEND="${RDEPEND}
-	qt5? ( >=dev-python/PyQt5-5.15.7[X] )"
+	qt5? ( dev-python/PyQt5 )"
 BDEPEND="${PYTHON_DEPS}"
 
 S=${WORKDIR}/Boodler-${PV}
