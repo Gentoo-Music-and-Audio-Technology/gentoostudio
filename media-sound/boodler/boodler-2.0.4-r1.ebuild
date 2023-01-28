@@ -1,8 +1,9 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+EAPI=7
+#PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+PYTHON_COMPAT=( python3_{6,7,8,9} )
 inherit distutils-r1 bash-completion-r1
 
 DESCRIPTION="Tool for creating soundscapes -- continuous, infinitely varying streams of sound"
