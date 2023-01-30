@@ -13,7 +13,7 @@ LICENSE="LGPL-2 GPL-2 public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="alsa bash-completion coreaudio doc intmath jack lame qt5 shout vorbis"
-REQUIRED_USE="shout? ( vorbis )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE} shout? ( vorbis )"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	jack? ( media-libs/bio2jack )
