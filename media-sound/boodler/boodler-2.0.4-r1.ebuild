@@ -37,7 +37,7 @@ python_prepare_all() {
 }
 
 python_prepare() {
-	if use qt4 ; then
+	if use qt5 ; then
 		# copy to tmp dir so it can be modified later
 		cp "${FILESDIR}"/boodle-ui-qt.py \
 			"${T}"/${EPYTHON}/boodle-ui-qt || die
@@ -95,9 +95,9 @@ python_configure_all() {
 }
 
 python_install() {
-	# a pyqt4 gui addon for boodler downloaded from the official site
+	# A pyqt gui addon for boodler downloaded from the official site
 	# http://boodler.org/dl/etc/boodle-ui-qt.py
-	if use qt4 ; then
+	if use qt5 ; then
 		python_doscript "${T}"/${EPYTHON}/boodle-ui-qt
 	fi
 
