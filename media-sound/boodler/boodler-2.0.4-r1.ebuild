@@ -1,5 +1,6 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# Source code required updates. Tarball now hosted by Gentoo Studio
 
 EAPI=7
 PYTHON_COMPAT=( python3_{6,7,8,9} )
@@ -8,7 +9,7 @@ inherit distutils-r1 bash-completion-r1
 DESCRIPTION="Tool for creating soundscapes -- continuous, infinitely varying streams of sound"
 HOMEPAGE="http://boodler.org/"
 RESTRICT="mirror"
-SRC_URI="http://boodler.org/dl/Boodler-${PV}.tar.gz"
+SRC_URI="http://gentoostudio.org/src/pkgs/Boodler-${PV}.tar.gz"
 LICENSE="LGPL-2 GPL-2 public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
