@@ -4,7 +4,7 @@
 EAPI=7
 
 #inherit eutils versionator
-inherit eutils ver_*
+inherit eutils
 
 #MY_PN="AFsp"
 #MY_PV="v$(replace_version_separator "1" "r")"
