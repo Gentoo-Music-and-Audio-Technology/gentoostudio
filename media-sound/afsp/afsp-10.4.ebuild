@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
+#PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
 
 src_compile() {
           # Yes, the -j1 is necessary, compile fails otherwise.
