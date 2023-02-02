@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${P}"
+S="${WORKDIR}/AFsp-v10r4a"
 
 #PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
 
