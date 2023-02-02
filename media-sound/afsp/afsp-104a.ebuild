@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${P}"
 
 #PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
 
