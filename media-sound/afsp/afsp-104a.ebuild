@@ -33,7 +33,7 @@ src_compile() {
 }
 
 src_install() {
-        rm -r "${S}"/bin/{Cygwin,Linux,Windows} || die
+        rm -r "${S}"/bin/{Cygwin,Linux} || die
         emake DESTDIR=${D} install
         dodoc Notes.txt README.txt
 }
