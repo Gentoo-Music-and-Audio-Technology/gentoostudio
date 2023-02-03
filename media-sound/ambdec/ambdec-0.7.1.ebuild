@@ -16,8 +16,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE="doc"
 
 RDEPEND="virtual/jack
-	>=media-libs/libclthreads-2.4.0
-	>=media-libs/libclxclient-3.6.1"
+	>=dev-libs/libclthreads-2.4.0
+	>=x11-libs/libclxclient-3.6.1"
 DEPEND="${RDEPEND}"
 
 S="${S}/source"
