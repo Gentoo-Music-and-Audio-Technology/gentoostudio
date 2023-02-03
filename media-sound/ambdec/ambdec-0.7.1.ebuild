@@ -22,11 +22,11 @@ DEPEND="${RDEPEND}"
 
 S="${S}/source"
 
-src_prepare() {
+#src_prepare() {
 #	epatch "${FILESDIR}/${P}-Makefile.patch"
-	esed_check -i -e "/^CPPFLAGS/ s/-O2//" Makefile
-	default
-}
+#	esed_check -i -e "/^CPPFLAGS/ s/-O2//" Makefile
+#	default
+#}
 
 src_compile() {
 	tc-export CC CXX
