@@ -15,7 +15,7 @@ IUSE="doc"
 
 RDEPEND="virtual/jack
 	>=dev-libs/libclthreads-2.4.0
-	>=media-libs/libclxclient-3.6.1
+	>=x11-libs/libclxclient-3.6.1
 	>=media-libs/libsndfile-1.0.18
 	>=media-libs/zita-alsa-pcmi-0.2.0
 	>=sci-libs/fftw-3.2.2:3.0"
