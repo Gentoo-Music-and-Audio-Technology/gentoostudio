@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 RDEPEND="virtual/jack
-	>=media-libs/libclthreads-2.4.0
+	>=dev-libs/libclthreads-2.4.0
 	>=media-libs/libclxclient-3.6.1
 	>=media-libs/libsndfile-1.0.18
 	>=media-libs/zita-alsa-pcmi-0.2.0
