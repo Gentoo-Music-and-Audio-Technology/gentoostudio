@@ -3,17 +3,8 @@
 
 EAPI=7
 
-#inherit eutils versionator
-#inherit eutils
-
-#MY_PN="AFsp"
-#MY_PV="v$(replace_version_separator "1" "r")"
-#MY_P="${MY_PN}-${MY_PV}a"
-
 DESCRIPTION="Audio file utility programs"
 HOMEPAGE="https://www-mmsp.ece.mcgill.ca/Documents/Downloads/AFsp/index.html"
-#SRC_URI="https://gentoostudio.org/src/pkgs/${MY_P}.tar.gz"
-#SRC_URI="https://gentoostudio.org/src/pkgs/AFsp-v10r4a.tar.gz"
 SRC_URI="https://gentoostudio.org/src/pkgs/${P}.tar.gz"
 LICENSE="AFsp"
 SLOT="0"
@@ -24,8 +15,6 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/AFsp-v10r4a"
-
-#PATCHES=( "${FILESDIR}/${PN}-makefile.patch" )
 
 src_compile() {
           # Yes, the -j1 is necessary, compile fails otherwise.
