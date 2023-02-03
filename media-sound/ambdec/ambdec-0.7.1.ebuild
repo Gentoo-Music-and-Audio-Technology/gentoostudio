@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}"
 S="${S}/source"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-Makefile.patch"
+#	epatch "${FILESDIR}/${P}-Makefile.patch"
 	esed_check -i -e "/^CPPFLAGS/ s/-O2//" Makefile
 	default
 }
