@@ -47,7 +47,7 @@ src_prepare() {
 		-e 's/-O3 -c/-c $(CFLAGS)/' \
 		-e 's/$(LIBS)/$(LDFLAGS) $(LIBS)/' \
 		src/makefile.{alsa,jack,oss} || die "sed failed"
-
+	eapply_user
 	epatch_user
 }
 
