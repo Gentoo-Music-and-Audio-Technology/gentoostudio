@@ -1,7 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 inherit eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="A Context-sensitive, On-the-fly Audio Programming Environ/mentality"
