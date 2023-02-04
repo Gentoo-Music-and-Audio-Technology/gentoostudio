@@ -21,8 +21,7 @@ RDEPEND="jack? ( virtual/jack )
 	virtual/glu
 	x11-libs/gtk+:2
 	truetype? ( media-libs/ftgl
-		media-fonts/corefonts )
-	app-eselect/eselect-audicle"
+		media-fonts/corefonts )"
 DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex
