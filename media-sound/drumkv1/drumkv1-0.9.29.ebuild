@@ -7,17 +7,13 @@ inherit autotools xdg-utils
 
 DESCRIPTION="An old-school all-digital drum-kit sampler synthesizer with stereo fx"
 HOMEPAGE="http://drumkv1.sourceforge.net/"
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/rncbc/${PN}.git"
-	KEYWORDS=""
-else
-	MY_PV=$(ver_rs 1- _)
-	SRC_URI="https://github.com/rncbc/${PN}/archive/${PN}_${MY_PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
-	RESTRICT="mirror"
-	S="${WORKDIR}/${PN}-${PN}_${MY_PV}"
-fi
+
+MY_PV=$(ver_rs 1- _)
+SRC_URI="https://github.com/rncbc/${PN}/archive/${PN}_${MY_PV}.tar.gz -> ${P}.tar.gz"
+KEYWORDS="~amd64"
+RESTRICT="mirror"
+S="${WORKDIR}/${PN}-${PN}_${MY_PV}"
+
 LICENSE="GPL-2+"
 SLOT="0"
 
@@ -43,15 +39,15 @@ src_prepare() {
 	eautoreconf
 
 	# Remove compression of manpages
-	sed -i -e "/@gzip.*man1/d" Makefile.in || die "sed failed"
+#	sed -i -e "/@gzip.*man1/d" Makefile.in || die "sed failed"
 
 	# Disable stripping
-	echo "QMAKE_STRIP=" >> src/src_core.pri.in
-	echo "QMAKE_STRIP=" >> src/src_jack.pri.in
-	echo "QMAKE_STRIP=" >> src/src_ui.pri.in
-	echo "QMAKE_STRIP=" >> src/src_lv2.pri.in
-	sed -i -e '/strip $(TARGET)/d' src/src_jack.pro || die "sed failed"
-	sed -i -e '/strip $(TARGET)/d' src/src_lv2.pro || die "sed failed"
+#	echo "QMAKE_STRIP=" >> src/src_core.pri.in
+#	echo "QMAKE_STRIP=" >> src/src_jack.pri.in
+#	echo "QMAKE_STRIP=" >> src/src_ui.pri.in
+#	echo "QMAKE_STRIP=" >> src/src_lv2.pri.in
+#	sed -i -e '/strip $(TARGET)/d' src/src_jack.pro || die "sed failed"
+#	sed -i -e '/strip $(TARGET)/d' src/src_lv2.pro || die "sed failed"
 
 	default
 }
