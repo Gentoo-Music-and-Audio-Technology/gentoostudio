@@ -48,7 +48,7 @@ src_prepare() {
 		-e 's/$(LIBS)/$(LDFLAGS) $(LIBS)/' \
 		src/makefile.{alsa,jack,oss} || die "sed failed"
 	epatch_user
-	eapply_user
+	default
 }
 
 compile_backend() {
