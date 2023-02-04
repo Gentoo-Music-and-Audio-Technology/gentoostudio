@@ -39,15 +39,15 @@ src_prepare() {
 	eautoreconf
 
 	# Remove compression of manpages
-#	sed -i -e "/@gzip.*man1/d" Makefile.in || die "sed failed"
+	sed -i -e "/@gzip.*man1/d" Makefile.in || die "sed failed"
 
 	# Disable stripping
-#	echo "QMAKE_STRIP=" >> src/src_core.pri.in
-#	echo "QMAKE_STRIP=" >> src/src_jack.pri.in
-#	echo "QMAKE_STRIP=" >> src/src_ui.pri.in
-#	echo "QMAKE_STRIP=" >> src/src_lv2.pri.in
-#	sed -i -e '/strip $(TARGET)/d' src/src_jack.pro || die "sed failed"
-#	sed -i -e '/strip $(TARGET)/d' src/src_lv2.pro || die "sed failed"
+	echo "QMAKE_STRIP=" >> src/src_core.pri.in
+	echo "QMAKE_STRIP=" >> src/src_jack.pri.in
+	echo "QMAKE_STRIP=" >> src/src_ui.pri.in
+	echo "QMAKE_STRIP=" >> src/src_lv2.pri.in
+	sed -i -e '/strip $(TARGET)/d' src/src_jack.pro || die "sed failed"
+	sed -i -e '/strip $(TARGET)/d' src/src_lv2.pro || die "sed failed"
 
 	default
 }
