@@ -40,14 +40,14 @@ PATCHES=(
 src_prepare() {
 	epatch "${PATCHES[@]}"
 
-#	sed -i \
-#		-e 's@../ftgl_lib/FTGL/include@/usr/include/FTGL@' \
-#		-e 's@../ftgl_lib/FTGL/mac/build@/usr/lib@' \
-#		-e 's/gcc -o/$(CC) -o/' \
-#		-e 's/-O3 -c/-c $(CFLAGS)/' \
-#		-e 's/$(LIBS)/$(LDFLAGS) $(LIBS)/' \
-#		src/makefile.{alsa,jack,oss} || die "sed failed"
-	epatch_user
+	sed -i \
+		-e 's@../ftgl_lib/FTGL/include@/usr/include/FTGL@' \
+		-e 's@../ftgl_lib/FTGL/mac/build@/usr/lib@' \
+		-e 's/gcc -o/$(CC) -o/' \
+		-e 's/-O3 -c/-c $(CFLAGS)/' \
+		-e 's/$(LIBS)/$(LDFLAGS) $(LIBS)/' \
+		src/makefile.{alsa,jack,oss} || die "sed failed"
+#	epatch_user
 	default
 }
 
