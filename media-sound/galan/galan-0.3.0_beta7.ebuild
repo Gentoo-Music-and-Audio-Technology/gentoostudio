@@ -26,7 +26,7 @@ RDEPEND="x11-libs/gtk+:2
 	media-libs/ladspa-sdk
 	media-libs/audiofile
 	media-libs/libsndfile
-	sci-libs/fftw:2.1"
+	sci-libs/fftw"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
