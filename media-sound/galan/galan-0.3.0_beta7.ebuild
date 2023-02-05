@@ -18,7 +18,7 @@ RDEPEND="x11-libs/gtk+:2
 	vorbis? ( >=media-sound/vorbis-tools-1.0 )
 	alsa? ( >=media-libs/alsa-lib-0.9.0_rc1 )
 	opengl? (
-		>=x11-libs/gtkglarea-1.99.0:2
+		virtual/opengl
 		virtual/glu
 	)
 	jack? ( virtual/jack )
