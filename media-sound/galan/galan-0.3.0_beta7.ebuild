@@ -6,7 +6,6 @@ inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="gAlan - Graphical Audio Language"
 HOMEPAGE="http://galan.sourceforge.net/"
-#SRC_URI="https://gentoostudio.org/src/${P}.tar.gz"
 SRC_URI="mirror://sourceforge/galan/${P}.tar.gz" # SF hosting not supported by GS ebuilds
 
 LICENSE="GPL-2"
