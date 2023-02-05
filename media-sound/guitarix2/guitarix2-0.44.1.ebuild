@@ -3,9 +3,8 @@
 
 EAPI=7
 
-[[ "${PV}" = "9999" ]] && inherit git-r3
-
-PYTHON_COMPAT=( python{2_7,3_{3,4}} )
+#PYTHON_COMPAT=( python3_{8..9} )
+PYTHON_COMPAT=( python{3_{9}} )
 PYTHON_REQ_USE="threads(+)"
 inherit python-any-r1 waf-utils
 
@@ -13,16 +12,11 @@ DESCRIPTION="A simple Linux Guitar Amplifier for jack with one input and two out
 HOMEPAGE="http://guitarix.sourceforge.net/"
 
 RESTRICT="mirror"
-if [ "${PV}" = "9999" ]; then
-	EGIT_REPO_URI="git://git.code.sf.net/p/guitarix/git/"
-	S="${S}/trunk"
-	KEYWORDS=""
-else
-	# SourceForge hosting banned by Gentoo Studio
-	SRC_URI="https://gentoostudio.org/src/${P}.tar.xz"
-	S="${WORKDIR}/guitarix-${PV}"
-	KEYWORDS="~amd64 ~x86"
-fi
+# SourceForge hosting banned by Gentoo Studio
+#SRC_URI="https://gentoostudio.org/src/${P}.tar.xz"
+SRC_URI="mirror://sourceforge/guitarix/${P}.tar.gz"
+S="${WORKDIR}/guitarix-${PV}"
+KEYWORDS="~amd64 ~x86"
 
 SLOT="0"
 LICENSE="GPL-2"
