@@ -1,13 +1,13 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="gAlan - Graphical Audio Language"
 HOMEPAGE="http://galan.sourceforge.net/"
-SRC_URI="https://gentoostudio.org/src/${P}.tar.gz"
-#SRC_URI="mirror://sourceforge/galan/${P}.tar.gz" # SF hosting not supported by GS ebuilds
+#SRC_URI="https://gentoostudio.org/src/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/galan/${P}.tar.gz" # SF hosting not supported by GS ebuilds
 
 LICENSE="GPL-2"
 SLOT="0"
