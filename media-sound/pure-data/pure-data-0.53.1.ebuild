@@ -7,18 +7,11 @@ inherit autotools desktop xdg
 
 DESCRIPTION="Visual programming language for multimedia"
 HOMEPAGE="http://msp.ucsd.edu/software.html"
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/pure-data/${PN}.git"
-	SRC_URI="https://puredata.info/portal_css/Plone%20Default/logo.png -> ${PN}.png"
-	KEYWORDS=""
-else
-	MY_P="pd-$(ver_cut 1-2)-$(ver_cut 3-)"
-	SRC_URI="http://msp.ucsd.edu/Software/pd-$(ver_cut 1-2)-$(ver_cut 3-).src.tar.gz
-		https://puredata.info/portal_css/Plone%20Default/logo.png -> ${PN}.png"
-	KEYWORDS="~amd64"
-	S="${WORKDIR}/${MY_P}"
-fi
+MY_P="pd-$(ver_cut 1-2)-$(ver_cut 3-)"
+SRC_URI="http://msp.ucsd.edu/Software/pd-$(ver_cut 1-2)-$(ver_cut 3-).src.tar.gz
+	https://puredata.info/portal_css/Plone%20Default/logo.png -> ${PN}.png"
+KEYWORDS="~amd64"
+S="${WORKDIR}/${MY_P}"
 LICENSE="BSD"
 SLOT="0"
 
