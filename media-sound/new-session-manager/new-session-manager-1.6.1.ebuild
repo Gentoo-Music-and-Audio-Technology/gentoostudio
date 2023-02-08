@@ -7,15 +7,9 @@ inherit meson flag-o-matic xdg-utils
 
 DESCRIPTION="A tool to assist music production by grouping standalone programs into sessions"
 HOMEPAGE="https://github.com/linuxaudio/new-session-manager"
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/linuxaudio/new-session-manager.git"
-	KEYWORDS=""
-else
-	SRC_URI="https://github.com/linuxaudio/new-session-manager/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	RESTRICT="mirror"
-	KEYWORDS="~amd64"
-fi
+SRC_URI="https://github.com/linuxaudio/new-session-manager/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+RESTRICT="mirror"
+KEYWORDS="~amd64"
 LICENSE="GPL-3"
 SLOT="0"
 RESTRICT="mirror"
