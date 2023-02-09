@@ -10,7 +10,7 @@ To use this repo, edit /etc/portage/repos.conf/gentoostudio.conf:
 [GentooStudio]
 location = /usr/local/portage
 sync-type = git
-sync-uri = https://github.com/audiodef/gentoostudio.git
+sync-uri = https://github.com/Gentoo-Music-and-Audio-Technology/gentoostudio.git
 auto-sync = yes
 
 Next time you emerge --sync or eix-sync, this repo will be picked-up/updated.
