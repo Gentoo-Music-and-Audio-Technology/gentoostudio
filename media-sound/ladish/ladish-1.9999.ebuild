@@ -34,7 +34,7 @@ RDEPEND="media-libs/alsa-lib
 		dev-libs/dbus-glib
 		x11-libs/gtk+:2
 		dev-cpp/gtkmm:2.4
-		>=gnome-base/libgnomecanvasmm-2.6.0
+		gnome-base/libgnomecanvas
 	)
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}
