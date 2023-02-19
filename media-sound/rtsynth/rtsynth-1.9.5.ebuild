@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=7
 
-inherit base eutils
+inherit eutils
 
 MY_P="${P}-alsa+jack"
 
