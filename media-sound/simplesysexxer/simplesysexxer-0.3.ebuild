@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=7
 
-inherit eutils qt4-r2
+inherit eutils
 
 MY_P="SimpleSysexxer"
 
@@ -21,8 +21,8 @@ IUSE=""
 S="${WORKDIR}/${MY_P}-${PV}"
 
 DEPEND=">=media-libs/alsa-lib-1.0.9
-	dev-qt/qtcore:4
-	dev-qt/qtgui:4"
+	dev-qt/qtcore
+	dev-qt/qtgui"
 RDEPEND="${DEPEND}"
 
 src_configure() {
