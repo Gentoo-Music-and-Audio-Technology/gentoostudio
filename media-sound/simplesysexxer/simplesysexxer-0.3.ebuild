@@ -30,7 +30,7 @@ src_configure() {
 	sed -i -e "s/QMAKE_CXXFLAGS/#QMAKE_CXXFLAGS/" \
 		SimpleSysexxer.pro || die "sed of SimpleSysexxer.pro failed"
 
-	eqmake4 SimpleSysexxer.pro
+	qmake5 SimpleSysexxer.pro
 }
 
 src_install() {
