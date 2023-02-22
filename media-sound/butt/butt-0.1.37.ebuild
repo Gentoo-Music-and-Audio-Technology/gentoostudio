@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="media-libs/fdk-aac"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
