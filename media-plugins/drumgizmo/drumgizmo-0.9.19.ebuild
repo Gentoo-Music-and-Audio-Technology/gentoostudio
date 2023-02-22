@@ -3,7 +3,7 @@
 
 # Version 0.9.14 doesn't work with DISTDIR. This has been passed along to the Drumgizmo team and they are aware of it.
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Open source cross-platform drum plugin & stand-alone application."
 HOMEPAGE="http://drumgizmo.org"
