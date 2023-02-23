@@ -9,8 +9,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# These deps are taken from upstream's stated requirements:
+# fltk-1.3, portaudio19, libmp3lame, libvorbis, libogg, libflac, libopus, libsamplerate, libfdk-aac, libdbus-1, libssl
 DEPEND="media-libs/fdk-aac
-	x11-libs/fltk"
+	x11-libs/fltk
+	media-libs/portaudio
+	media-sound/lame
+	media-libs/libvorbis
+	media-libs/libogg
+	media-libs/flac
+	media-libs/opus
+	media-libs/libsamplerate
+	sys-apps/dbus
+	dev-libs/openssl"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -18,5 +29,6 @@ src_configure() {
 	append-ldflags "$(fltk-config --ldflags)"
 }
 
-#src_install() {
-#}
+src_install() {
+	emake DESTDIR="${D}" install
+}
