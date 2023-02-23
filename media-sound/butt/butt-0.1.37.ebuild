@@ -9,7 +9,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-inherit flag-o-matic
+inherit autotools flag-o-matic
 
 # These deps are taken from upstream's stated requirements:
 # fltk-1.3, portaudio19, libmp3lame, libvorbis, libogg, libflac, libopus, libsamplerate, libfdk-aac, libdbus-1, libssl
@@ -27,9 +27,13 @@ DEPEND="media-libs/fdk-aac
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_prepare() {
+	default
+	eautoreconf -i
+}
+
 src_configure() {
 	append-ldflags "$(fltk-config --ldflags)"
-	eautoreconf -i
 }
 
 src_install() {
