@@ -29,7 +29,7 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	eautoreconf -i
+	eautoreconf
 }
 
 src_configure() {
