@@ -9,6 +9,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+inherit flag-o-matic
+
 # These deps are taken from upstream's stated requirements:
 # fltk-1.3, portaudio19, libmp3lame, libvorbis, libogg, libflac, libopus, libsamplerate, libfdk-aac, libdbus-1, libssl
 DEPEND="media-libs/fdk-aac
