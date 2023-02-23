@@ -29,8 +29,9 @@ BDEPEND=""
 
 src_configure() {
 	append-ldflags "$(fltk-config --ldflags)"
+	eautoreconf -i
 }
 
 src_install() {
-	emake DESTDIR="${D}"
+	emake DESTDIR="${D}" install
 }
