@@ -14,5 +14,9 @@ DEPEND="media-libs/fdk-aac
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_configure() {
+	append-ldflags "$(fltk-config --ldflags)"
+}
+
 #src_install() {
 #}
