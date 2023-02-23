@@ -8,15 +8,10 @@ inherit meson
 DESCRIPTION="Linux ports of Distrho plugins"
 HOMEPAGE="https://github.com/DISTRHO/DISTRHO-Ports"
 EGIT_REPO_URI="https://github.com/DISTRHO/DISTRHO-Ports"
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	KEYWORDS=""
-else
-	MY_PN="${PV:0:4}-${PV:4:2}-${PV:6:2}"
-	SRC_URI="https://github.com/DISTRHO/DISTRHO-Ports/archive/${MY_PN}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
-	S="${WORKDIR}/DISTRHO-Ports-${MY_PN}"
-fi
+MY_PN="${PV:0:4}-${PV:4:2}-${PV:6:2}"
+SRC_URI="https://github.com/DISTRHO/DISTRHO-Ports/archive/${MY_PN}.tar.gz -> ${P}.tar.gz"
+KEYWORDS="~amd64"
+S="${WORKDIR}/DISTRHO-Ports-${MY_PN}"
 LICENSE="GPL-2"
 SLOT="0"
 RESTRICT="mirror"
