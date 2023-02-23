@@ -29,7 +29,8 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	eautoreconf
+	# Upstream recommends autoreconf -i if things don't work out
+	eautoreconf i
 }
 
 src_configure() {
@@ -37,5 +38,5 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}"
+	emake
 }
