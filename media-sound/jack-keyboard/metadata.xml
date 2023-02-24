@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <name>Nedko Arnaudov</name>
+    <irc><nick>nedko</nick><network>libera.chat</network></irc>
+  </maintainer>
+  <maintainer type="project">
+    <name>LADI project, #ladi on libera.chat</name>
+    <irc><channel>#ladi</channel><network>libera.chat</network></irc>
+  </maintainer>
+</pkgmetadata>
