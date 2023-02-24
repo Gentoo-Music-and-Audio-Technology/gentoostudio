@@ -34,8 +34,8 @@ src_prepare() {
 }
 
 src_configure() {
-	default
 	append-ldflags "$(fltk-config --ldflags)"
+	default
 }
 
 src_install() {
