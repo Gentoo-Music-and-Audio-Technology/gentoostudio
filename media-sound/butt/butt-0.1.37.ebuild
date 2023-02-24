@@ -30,10 +30,11 @@ BDEPEND=""
 src_prepare() {
 	default
 	# Upstream recommends autoreconf -i if things don't work out
-	eautoreconf i
+	eautoreconf -i
 }
 
 src_configure() {
+	default
 	append-ldflags "$(fltk-config --ldflags)"
 }
 
