@@ -20,7 +20,8 @@ RDEPEND=">=dev-cpp/gtkmm-2.12:2.4
 	dev-cpp/libxmlpp:2.6
 	virtual/jack"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	dev-util/intltool"
 
 DOCS=( AUTHORS ChangeLog README )
 
