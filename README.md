@@ -25,3 +25,5 @@ auto-sync = yes
 
 Next time you emerge --sync or eix-sync, this repo will be picked-up/updated.
 To update only this repo: emaint sync -r GentooStudio
+
+test
