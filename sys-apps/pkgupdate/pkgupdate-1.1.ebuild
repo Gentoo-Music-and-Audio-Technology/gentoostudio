@@ -1,5 +1,3 @@
-# Gentoo Studio
-
 EAPI=8
 
 DESCRIPTION="Package/system update script for Gentoo Studio"
