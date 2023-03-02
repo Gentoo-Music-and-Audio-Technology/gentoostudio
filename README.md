@@ -14,16 +14,10 @@ The reason for this is catalyst (the software used to build the install tarball)
 To use this repo, edit /etc/portage/repos.conf/gentoostudio.conf:
 
 [GentooStudio]
-
 location = /var/db/repos
-
 sync-type = git
-
 sync-uri = https://github.com/Gentoo-Music-and-Audio-Technology/gentoostudio.git
-
 auto-sync = yes
 
 Next time you emerge --sync or eix-sync, this repo will be picked-up/updated.
 To update only this repo: emaint sync -r GentooStudio
-
-test
