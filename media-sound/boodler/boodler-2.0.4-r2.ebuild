@@ -3,7 +3,7 @@
 # Source code required updates. Tarball now hosted by Gentoo Studio
 
 EAPI=7
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{10,11} )
 inherit distutils-r1 bash-completion-r1
 
 DESCRIPTION="Tool for creating soundscapes -- continuous, infinitely varying streams of sound"
