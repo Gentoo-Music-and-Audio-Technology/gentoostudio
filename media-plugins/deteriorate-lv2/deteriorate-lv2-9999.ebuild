@@ -32,4 +32,4 @@ RDEPEND="dev-cpp/gtkmm:2.4
 DEPEND="${RDEPEND}"
 BDEPEND="${PYTHON_DEPS}"
 
-PATCHES="${FILESDIR}/${PN}-1.0.7-wscript-fix-duplicate-manifest-install.patch"
+#PATCHES="${FILESDIR}/${PN}-1.0.7-wscript-fix-duplicate-manifest-install.patch"
