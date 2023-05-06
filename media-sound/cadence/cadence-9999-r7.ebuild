@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_10 )
 inherit git-r3 python-single-r1 gnome2-utils
 
 DESCRIPTION="Collection of tools useful for audio production"
@@ -16,7 +16,6 @@ SLOT="0"
 IUSE="-pulseaudio a2jmidid ladish opengl"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-DEPEND=${RDEPEND}
 BDEPEND="${PYTHON_DEPS}
 	media-sound/jack2[dbus]
 	$(python_gen_cond_dep 'dev-python/PyQt5[dbus,gui,opengl?,svg,widgets,${PYTHON_USEDEP}]')
@@ -24,6 +23,7 @@ BDEPEND="${PYTHON_DEPS}
 	a2jmidid? ( media-sound/a2jmidid[dbus] )
 	ladish? ( >=media-sound/ladish-9999 )
 	pulseaudio? ( media-sound/pulseaudio[jack] )"
+DEPEND=${RDEPEND}
 
 src_prepare() {
 	sed -i -e "s/python3/${EPYTHON}/" \
