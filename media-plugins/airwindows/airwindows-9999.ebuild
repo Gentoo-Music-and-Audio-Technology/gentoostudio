@@ -15,7 +15,7 @@ IUSE=""
 
 RDEPEND=""
 
-DESTDIR="/usr/lib64/airwindows"
+DESTDIR="/usr/lib64/lv2/airwindows"
 S="${WORKDIR}/LinuxVSTs"
 
 src_unpack() {
