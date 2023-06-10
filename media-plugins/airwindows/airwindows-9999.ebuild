@@ -16,6 +16,7 @@ IUSE=""
 RDEPEND=""
 
 DESTDIR="/usr/lib64/airwindows"
+S="${WORKDIR}/LinuxVSTs"
 
 src_unpack() {
 	unpack LinuxVSTs.zip
