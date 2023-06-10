@@ -25,5 +25,5 @@ src_unpack() {
 src_install() {
 	exeinto "${DESTDIR}"
 	# Not sure if wildcards work here. It is a LONG list of files.
-	doexe ADClip7.so
+	doexe *.so
 }
