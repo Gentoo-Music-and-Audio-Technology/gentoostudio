@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+	<email>webmaster@gentoostudio.org</email>
+	<name>Gentoo Studio/Audiodef/Damien Moody</name>
+  </maintainer>
+  <longdescription>
+	Argotlunar is a tool for creating surreal transformations of audio streams. Specifically, it is a real-time delay-line granulator.
+  </longdescription>
+</pkgmetadata>
