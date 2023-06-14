@@ -13,7 +13,8 @@ KEYWORDS="amd64"
 RESTRICT=""
 IUSE=""
 
-RDEPEND=""
+DEPEND="media-fonts/ttf-bitstream-vera"
+RDEPEND="${DEPEND}"
 
 DESTDIR="/usr/lib64/vst/argotlunar"
 S="${WORKDIR}/argotlunar-2.06-linux_64"
