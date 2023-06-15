@@ -20,10 +20,10 @@ RDEPEND=""
 # VST3:
 DESTDIR="/usr/lib/vst3"
 
-# LV2:
+# LV3:
 #S="${WORKDIR}/Odin2.lv2"
 # VST3:
-# !needed
+S="${WORKDIR}"
 
 src_unpack() {
 	unpack Odin2.3.4Linux.zip
