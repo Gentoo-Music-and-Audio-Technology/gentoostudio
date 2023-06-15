@@ -16,7 +16,7 @@ IUSE=""
 RDEPEND=""
 
 DESTDIR="/usr/lib64/lv2/odin"
-S="${WORKDIR}/Odin2.3.4Linux/Odin2.lv2"
+S="${WORKDIR}/Odin2.lv2"
 
 src_unpack() {
 	unpack Odin2.3.4Linux.zip
