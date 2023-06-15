@@ -23,7 +23,7 @@ DESTDIR="/usr/lib/vst3/Odin2.vst3/Contents/x86_64-linux"
 # LV3:
 #S="${WORKDIR}/Odin2.lv2"
 # VST3:
-S="${WORKDIR}"
+S="${WORKDIR}/Odin2.vst3/Contents/x86_64-linux"
 
 src_unpack() {
 	unpack Odin2.3.4Linux.zip
