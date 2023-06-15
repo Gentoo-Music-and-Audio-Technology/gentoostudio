@@ -25,6 +25,6 @@ src_unpack() {
 src_install() {
 	exeinto "${DESTDIR}"
 	doexe *.so
-	insinto
+	insinto "${DESTDIR}"
 	doins *.ttl
 }
