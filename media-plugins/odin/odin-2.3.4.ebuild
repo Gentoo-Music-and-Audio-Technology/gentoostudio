@@ -15,16 +15,27 @@ IUSE=""
 
 RDEPEND=""
 
-DESTDIR="/usr/lib64/lv2/odin"
-S="${WORKDIR}/Odin2.lv2"
+# LV2:
+#DESTDIR="/usr/lib64/lv2/odin"
+# VST3:
+DESTDIR="/usr/lib/vst3"
+
+# LV2:
+#S="${WORKDIR}/Odin2.lv2"
+# VST3:
+# !needed
 
 src_unpack() {
 	unpack Odin2.3.4Linux.zip
 }
 
 src_install() {
-	exeinto "${DESTDIR}"
-	doexe *.so
-	insinto "${DESTDIR}"
-	doins *.ttl
+	# LV2:
+	#exeinto "${DESTDIR}"
+	#doexe *.so
+	#insinto "${DESTDIR}"
+	#doins *.ttl
+
+	# VST3:
+	dodir Odin2.vst3
 }
