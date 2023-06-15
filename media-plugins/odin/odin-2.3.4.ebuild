@@ -18,7 +18,7 @@ RDEPEND=""
 # LV2:
 #DESTDIR="/usr/lib64/lv2/odin"
 # VST3:
-DESTDIR="/usr/lib/vst3"
+DESTDIR="/usr/lib/vst3/Odin2.vst3/Contents/x86_64-linux"
 
 # LV3:
 #S="${WORKDIR}/Odin2.lv2"
@@ -37,5 +37,7 @@ src_install() {
 	#doins *.ttl
 
 	# VST3:
-	dodir Odin2.vst3
+	dodir /usr/lib/vst3/Odin2.vst3/Contents/x86_64-linux
+	exeinto "${DESTDIR}"
+	doexe Odin2.so
 }
