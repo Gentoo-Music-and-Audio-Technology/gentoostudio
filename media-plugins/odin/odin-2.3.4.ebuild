@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="24 voice polyphonic synthesizer with effects, classic and drawn waveforms, and classic filter emulations."
+DESCRIPTION="24 voice polyphonic synthesizer with effects, classic and drawn waveforms, and classic filter emulations. (VST3)"
 HOMEPAGE="https://thewavewarden.com/pages/odin-2"
 SRC_URI="https://dl.dropboxusercontent.com/s/r7c2tu4dj6az75h/Odin2.3.4Linux.zip"
 
@@ -14,6 +14,8 @@ RESTRICT=""
 IUSE=""
 
 RDEPEND=""
+
+# The VST3 version appears to work whereas I have not gotten the LV2 version to work.
 
 # LV2:
 #DESTDIR="/usr/lib64/lv2/odin"
@@ -37,7 +39,7 @@ src_install() {
 	#doins *.ttl
 
 	# VST3:
-	dodir /usr/lib/vst3/Odin2.vst3/Contents/x86_64-linux
+	dodir "${DESTDIR}"
 	exeinto "${DESTDIR}"
 	doexe Odin2.so
 }
