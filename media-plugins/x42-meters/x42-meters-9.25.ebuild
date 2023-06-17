@@ -17,7 +17,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 DESTDIR="/usr/lib64/lv2/x42-meters.lv2"
-S="${WORKDIR}/x42-meters-v0.9.25-x86_64"
+S="${WORKDIR}/x42-meters/meters.lv2"
 
 src_unpack() {
 	unpack x42-meters-v0.9.25-x86_64.tar.gz
