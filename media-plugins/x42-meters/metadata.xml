@@ -6,6 +6,6 @@
 	<name>Gentoo Studio/Audiodef/Damien Moody</name>
   </maintainer>
   <longdescription>
-	A collection of audio-level meters following established standards.
+	A collection of audio-level meters following established standards. Non-free binary version.
   </longdescription>
 </pkgmetadata>

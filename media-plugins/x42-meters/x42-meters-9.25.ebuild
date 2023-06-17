@@ -3,8 +3,8 @@
 
 EAPI=8
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="A collection of audio-level meters following established standards. Non-free binary version."
+HOMEPAGE="https://x42-plugins.com/x42/"
 SRC_URI="https://x42-plugins.com/x42/linux/x42-meters-v0.9.25-x86_64.tar.gz"
 
 LICENSE="GPL-2"
