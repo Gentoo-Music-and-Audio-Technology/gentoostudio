@@ -58,5 +58,5 @@ src_configure() {
 src_install() {
         # Ensure installdir standards are adhered to
         # See https://lv2plug.in/pages/filesystem-hierarchy-standard.html
-        emake DESTDIR="${D}" PREFIX="/usr" LV2DIR="/usr/lib/lv2" install
+        emake DESTDIR="${D}" PREFIX="/usr" LV2DIR="/usr/lib/lv2"
 }
