@@ -1,16 +1,24 @@
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=8
+EAPI=7
 
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{10,11} )
 inherit python-single-r1 xdg-utils
 
 DESCRIPTION="Fully-featured audio plugin host, supports many audio drivers and plugin formats"
 HOMEPAGE="http://kxstudio.linuxaudio.org/Applications:Carla"
-SRC_URI="https://github.com/falkTX/Carla/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-RESTRICT="mirror"
-KEYWORDS="~amd64"
-S="${WORKDIR}/Carla-${PV}"
+if [[ ${PV} == *9999 ]]; then
+	# Disable submodules to prevent external plugins from being built and installed
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/falkTX/Carla.git"
+	EGIT_SUBMODULES=()
+else
+	SRC_URI="https://github.com/falkTX/Carla/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	RESTRICT="mirror"
+	KEYWORDS="~amd64"
+	S="${WORKDIR}/Carla-${PV}"
+fi
 LICENSE="GPL-2 LGPL-3"
 SLOT="0"
 
@@ -32,7 +40,7 @@ RDEPEND="${PYTHON_DEPS}
 	sf2? ( media-sound/fluidsynth )
 	sndfile? ( media-libs/libsndfile )
 	X? ( x11-base/xorg-server )"
-DEPEND="${RDEPEND}"
+DEPEND=${RDEPEND}
 
 src_prepare() {
 	sed -i -e "s|exec \$PYTHON|exec ${PYTHON}|" \
