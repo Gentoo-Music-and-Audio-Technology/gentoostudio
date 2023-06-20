@@ -7,7 +7,7 @@ DESCRIPTION="LV2 noise gate"
 HOMEPAGE="https://abgate.sourceforge.io/"
 SRC_URI="https://github.com/antanasbruzas/abGate/archive/v1.1.9.tar.gz"
 KEYWORDS="amd64"
-LICENSE="GPLv3"
+LICENSE="GPL-3"
 SLOT="0"
 RESTRICT="mirror"
 
