@@ -28,5 +28,5 @@ src_install() {
 	doexe *.so
 	insinto /usr/lib64/cardinal.lv2
 	doins *.ttl
-	doins resources
+	#doins resources
 }
