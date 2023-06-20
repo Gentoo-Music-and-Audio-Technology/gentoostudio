@@ -50,6 +50,6 @@ src_install() {
 	doins -r resources
 	cd ..
 	exeinto /usr/bin
-	doexe CardinalJack
+	doexe CardinalJACK
 	doexe CardinalNative
 }
