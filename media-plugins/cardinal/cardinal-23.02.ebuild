@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}"
 #DESTDIR="/usr/lib64/lv2/cardinal"
 
 src_unpack() {
-	Cardinal-linux-x86_64-23.02.tar.gz
+	unpack Cardinal-linux-x86_64-23.02.tar.gz
 }
 
 src_install() {
