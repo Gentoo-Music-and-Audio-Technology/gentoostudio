@@ -21,7 +21,7 @@ RDEPEND="virtual/jack
 	x11-libs/cairo"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}"
+S="${WORKDIR}/lsp-plugins-lv2-1.2.7-Linux-x86_64/usr/lib/lv2/lsp-plugins.lv2"
 
 src_unpack() {
 	unpack lsp-plugins-lv2-1.2.7-Linux-x86_64.tar.gz
