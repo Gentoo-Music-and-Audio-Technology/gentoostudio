@@ -30,7 +30,7 @@ src_install() {
 	insinto /usr/lib64/lv2/cardinal.lv2
 	doins *.ttl
 	#doins resources
-	cd CardinalFX.lv2
+	cd ../CardinalFX.lv2
 	exeinto /usr/lib64/lv2/cardinalfx.lv2
 	doexe *.so
 	insinto /usr/lib64/lv2/cardinalfx.lv2
