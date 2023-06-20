@@ -5,4 +5,7 @@
 		<email>webmaster@gentoostudio.org</email>
 		<name>Gentoo Studio/Damien Moody</name>
 	</maintainer>
+	<longdescription>
+		Open-source plugins that include EQs, dynamics, reverb and more.
+	</longdescription>
 </pkgmetadata>
