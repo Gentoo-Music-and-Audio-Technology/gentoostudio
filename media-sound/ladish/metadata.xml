@@ -2,6 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
+	        <email>webmaster@gentoostudio.org</email>
+        	<name>Gentoo Studio/Audiodef/Damien Moody</name>
+	</maintainer>
+	<maintainer type="person">
 		<email>nedko@nedk.org</email>
 		<name>Nedko Arnaudov</name>
 	</maintainer>
