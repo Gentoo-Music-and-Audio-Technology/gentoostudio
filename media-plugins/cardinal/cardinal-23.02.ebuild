@@ -17,13 +17,13 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 #DESTDIR="/usr/lib64/lv2/cardinal"
+S="${WORKDIR}"
 
 src_unpack() {
 	unpack Cardinal-linux-x86_64-23.02.tar.gz
 }
 
 src_install() {
-	S="${WORKDIR}/Cardinal.lv2"
 	exeinto /usr/lib64/lv2/cardinal.lv2
 	doexe *.so
 	insinto /usr/lib64/cardinal.lv2
