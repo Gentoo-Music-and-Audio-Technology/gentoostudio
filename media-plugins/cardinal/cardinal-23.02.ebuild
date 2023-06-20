@@ -24,6 +24,7 @@ src_unpack() {
 }
 
 src_install() {
+	S="${WORKDIR}/Cardinal.lv2"
 	exeinto /usr/lib64/lv2/cardinal.lv2
 	doexe *.so
 	insinto /usr/lib64/cardinal.lv2
