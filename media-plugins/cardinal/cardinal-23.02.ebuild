@@ -26,7 +26,7 @@ src_unpack() {
 src_install() {
 	exeinto /usr/lib64/lv2/cardinal.lv2
 	doexe *.so
-	insinto /usr/lib64/cardinal.lv2
+	insinto /usr/lib64/lv2/cardinal.lv2
 	doins *.ttl
 	#doins resources
 }
