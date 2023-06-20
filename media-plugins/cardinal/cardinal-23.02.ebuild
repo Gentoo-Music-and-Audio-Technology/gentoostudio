@@ -16,7 +16,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-#DESTDIR="/usr/lib64/lv2/cardinal"
 S="${WORKDIR}"
 
 src_unpack() {
@@ -36,4 +35,21 @@ src_install() {
 	insinto /usr/lib64/lv2/cardinalfx.lv2
 	doins *.ttl
 	doins -r resources
+	cd ../CardinalMini.lv2
+	exeinto /usr/lib64/lv2/cardinalmini.lv2
+	doexe *.so
+	insinto /usr/lib64/lv2/cardinalmini.lv2
+	doins *.ttl
+	doins -r resources
+	doins -r modgui
+	cd ../CardinalSynth.lv2
+	exeinto /usr/lib64/lv2/cardinalsynth.lv2
+	doexe *.so
+	insinto /usr/lib64/lv2/cardinalsynth.lv2
+	doins *.ttl
+	doins -r resources
+	cd ..
+	exeinto /usr/bin
+	doexe CardinalJack
+	doexe CardinalNative
 }
