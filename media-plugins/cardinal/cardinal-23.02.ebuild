@@ -7,7 +7,7 @@ DESCRIPTION="Cardinal is a free and open-source virtual modular synthesizer plug
 HOMEPAGE="https://github.com/DISTRHO/Cardinal"
 SRC_URI="https://github.com/DISTRHO/Cardinal/releases/download/23.02/Cardinal-linux-x86_64-23.02.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64"
 RESTRICT=""
@@ -17,14 +17,13 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 #DESTDIR="/usr/lib64/lv2/cardinal"
-S="${WORKDIR}"
+S="${WORKDIR}/Cardinal.lv2"
 
 src_unpack() {
 	unpack Cardinal-linux-x86_64-23.02.tar.gz
 }
 
 src_install() {
-	S="${WORKDIR}/Cardinal.lv2"
 	exeinto /usr/lib64/lv2/cardinal.lv2
 	doexe *.so
 	insinto /usr/lib64/cardinal.lv2
