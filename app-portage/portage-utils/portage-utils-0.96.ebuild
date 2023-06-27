@@ -50,10 +50,6 @@ DEPEND="${RDEPEND}
 	)"
 BDEPEND="virtual/pkgconfig"
 
-pkg_setup() {
-	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
-}
-
 src_prepare() {
 	default
 	[[ ${PV} == *9999 ]] && eautoreconf
