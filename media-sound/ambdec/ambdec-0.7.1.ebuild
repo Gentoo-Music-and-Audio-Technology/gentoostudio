@@ -1,8 +1,9 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
-inherit exteutils toolchain-funcs multilib
+EAPI=8
+#inherit exteutils toolchain-funcs multilib
+inherit toolchain-funcs multilib
 
 RESTRICT="mirror"
 DESCRIPTION="An Ambisonic decoder for first and second order"
