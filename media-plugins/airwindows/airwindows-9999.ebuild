@@ -5,7 +5,9 @@ EAPI=8
 
 DESCRIPTION="Airwindows is a collection of high-quality plugins by Chris Johnson."
 HOMEPAGE="https://www.airwindows.com/"
-SRC_URI="https://www.airwindows.com/wp-content/uploads/LinuxVSTs.zip"
+# It looks like the dev makes frequent updates and a versionless approach, so hosting it ourselves for stability.
+#SRC_URI="https://www.airwindows.com/wp-content/uploads/LinuxVSTs.zip"
+SRC_URI="https://decibellinux.org/src/pkgs/LinuxVSTs.zip"
 
 LICENSE=""
 SLOT="0"
@@ -24,6 +26,5 @@ src_unpack() {
 
 src_install() {
 	exeinto "${DESTDIR}"
-	# Not sure if wildcards work here. It is a LONG list of files.
 	doexe *.so
 }
